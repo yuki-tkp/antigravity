@@ -1,0 +1,77 @@
+.header {
+    background-color: var(--primary-white);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 130px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #000;
+    text-transform: none;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo span {
+    color: var(--text-main);
+}
+
+.nav {
+    display: none;
+}
+
+.navLinks {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.navLink {
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    transition: color 0.2s;
+}
+
+.navLink:hover {
+    color: var(--primary-blue);
+}
+
+.entryButton {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+}
+
+/* Mobile Menu Toggle (Simplified for initial version) */
+.mobileToggle {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+}
+
+@media (min-width: 768px) {
+    .nav {
+        display: block;
+    }
+
+    .mobileToggle {
+        display: none;
+    }
+}

@@ -1,0 +1,58 @@
+.newsList {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.newsItem {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.newsMeta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.newsDate {
+    color: #888;
+}
+
+.newsCategory {
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.info {
+    background-color: #e0f2fe;
+    color: #0369a1;
+}
+
+.game {
+    background-color: #fef3c7;
+    color: #b45309;
+}
+
+.other {
+    background-color: #f3f4f6;
+    color: #4b5563;
+}
+
+.newsTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.newsTitle a:hover {
+    color: var(--primary-blue);
+    text-decoration: underline;
+}

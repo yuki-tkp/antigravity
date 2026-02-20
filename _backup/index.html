@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="3x3バスケットボール協会の公式ウェブサイト。1Dayリーグ開催案内、出場チーム募集、活動報告など。">
+    <title>3x3 BASKETBALL ASSOCIATION | STREET LEAGUE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">3x3<span class="accent">ASSOC.</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#league">LEAGUE</a></li>
+                <li><a href="#entry">ENTRY</a></li>
+                <li><a href="#reports">REPORTS</a></li>
+                <li><a href="#sponsors">SPONSORS</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content container">
+            <h1 class="hero-title glitch" data-text="STREET TO ELITE">STREET TO ELITE</h1>
+            <p class="hero-subtitle">THE NEXT LEVEL OF 3x3 BASKETBALL</p>
+            <a href="#entry" class="btn btn-primary">JOIN THE LEAGUE</a>
+        </div>
+        <div class="scroll-down">
+            <span>SCROLL</span>
+            <div class="arrow"></div>
+        </div>
+    </header>
+
+    <!-- Live Match Center -->
+    <section id="live" class="section live-match">
+        <div class="container">
+            <div class="live-header scroll-reveal">
+                <div class="live-badge">
+                    <span class="pulse"></span> LIVE
+                </div>
+                <div class="match-info">
+                    <span>TOKYO STREET CUP</span>
+                    <span class="divider">/</span>
+                    <span>FINAL</span>
+                </div>
+            </div>
+
+            <div class="scoreboard scroll-reveal" style="animation-delay: 0.1s;">
+                <div class="team team-home">
+                    <h3 class="team-name">SHIBUYA<br>RATS</h3>
+                    <div class="team-color" style="background: #fff;"></div>
+                    <div class="score" id="scoreA">0</div>
+                    <div class="fouls">FOULS: <span id="foulA">0</span></div>
+                </div>
+
+                <div class="match-center">
+                    <div class="timer">
+                        <span id="gameTimer">10:00</span>
+                    </div>
+                    <div class="shot-clock">
+                        <span id="shotClock">12</span>
+                    </div>
+                    <div class="period">GAME TIME</div>
+                </div>
+
+                <div class="team team-away">
+                    <h3 class="team-name">HARAJUKU<br>BALLERS</h3>
+                    <div class="team-color" style="background: var(--accent-color);"></div>
+                    <div class="score" id="scoreB">0</div>
+                    <div class="fouls">FOULS: <span id="foulB">0</span></div>
+                </div>
+            </div>
+
+            <div class="live-action scroll-reveal" style="animation-delay: 0.2s;">
+                <div class="action-label">LATEST PLAY >></div>
+                <div class="action-text" id="actionText">GAME STARTING SOON...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">ABOUT <span class="accent">US</span></h2>
+            <div class="about-grid">
+                <div class="about-text scroll-reveal">
+                    <h3>ストリートから世界へ。</h3>
+                    <p>3x3バスケットボールは、ただのスポーツではない。カルチャーだ。<br>
+                        スピーディーな展開、激しいフィジカルコンタクト、そしてストリートの熱狂。<br>
+                        我々は、この熱を広げ、新たな才能を発掘し、世界へ送り出すためのプラットフォームを提供する。</p>
+                </div>
+                <div class="about-image scroll-reveal">
+                    <!-- Placeholder for dynamic image -->
+                    <div class="img-placeholder">3x3 ACTION</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1Day League Info -->
+    <section id="league" class="section league">
+        <div class="container">
+            <h2 class="section-title">1DAY <span class="accent">LEAGUE</span></h2>
+            <p class="section-desc">週末に開催される短期決戦。勝利を手にするのは誰だ。</p>
+
+            <div class="league-cards">
+                <div class="card league-card scroll-reveal">
+                    <div class="card-header">
+                        <span class="season">SEASON 2026</span>
+                        <h3>WINTER CUP</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="info-row">
+                            <span class="label">DATE</span>
+                            <span class="value">2026.02.28 (SAT)</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">PLACE</span>
+                            <span class="value">SHIBUYA STREET COURT</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">ENTRY FEE</span>
+                            <span class="value">¥12,000 / TEAM</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">PRIZE</span>
+                            <span class="value">¥50,000 + GEAR</span>
+                        </div>
+                        <a href="#entry" class="btn btn-secondary full-width">APPLY NOW</a>
+                    </div>
+                </div>
+
+                <div class="card league-card scroll-reveal" style="animation-delay: 0.2s;">
+                    <div class="card-header">
+                        <span class="season">SEASON 2026</span>
+                        <h3>SPRING OPEN</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="info-row">
+                            <span class="label">DATE</span>
+                            <span class="value">2026.03.21 (SAT)</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">PLACE</span>
+                            <span class="value">YOYOGI PARK</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">ENTRY FEE</span>
+                            <span class="value">¥12,000 / TEAM</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">PRIZE</span>
+                            <span class="value">¥50,000 + GEAR</span>
+                        </div>
+                        <a href="#entry" class="btn btn-secondary full-width">COMING SOON</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entry Form Section -->
+    <section id="entry" class="section entry">
+        <div class="container">
+            <h2 class="section-title">TEAM <span class="accent">ENTRY</span></h2>
+            <div class="form-container scroll-reveal">
+                <form id="entryForm" class="entry-form">
+                    <div class="form-group">
+                        <label for="teamName">TEAM NAME</label>
+                        <input type="text" id="teamName" name="teamName" required placeholder="Enter your team name">
+                    </div>
+                    <div class="form-group">
+                        <label for="repName">REPRESENTATIVE NAME</label>
+                        <input type="text" id="repName" name="repName" required placeholder="Representative name">
+                    </div>
+                    <div class="form-group half">
+                        <div class="half-box">
+                            <label for="email">EMAIL</label>
+                            <input type="email" id="email" name="email" required placeholder="email@example.com">
+                        </div>
+                        <div class="half-box">
+                            <label for="phone">PHONE</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="090-1234-5678">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="members">NUMBER OF PLAYERS</label>
+                        <select id="members" name="members">
+                            <option value="3">3 Players</option>
+                            <option value="4">4 Players</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">MESSAGE / QUESTIONS</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary full-width">SUBMIT ENTRY</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activity Reports Section -->
+    <section id="reports" class="section reports">
+        <div class="container">
+            <h2 class="section-title">ACTIVITY <span class="accent">REPORTS</span></h2>
+            <div class="reports-grid">
+                <article class="report-card scroll-reveal">
+                    <div class="report-img"></div>
+                    <div class="report-content">
+                        <span class="date">2026.01.15</span>
+                        <h4>WINTER CUP 予選大会レポート</h4>
+                        <p>熱戦が繰り広げられた予選大会の様子をお届けします。MVPはTeam Xの...</p>
+                        <a href="#" class="read-more">READ MORE</a>
+                    </div>
+                </article>
+                <article class="report-card scroll-reveal" style="animation-delay: 0.1s;">
+                    <div class="report-img"></div>
+                    <div class="report-content">
+                        <span class="date">2025.12.20</span>
+                        <h4>年末チャリティイベント開催</h4>
+                        <p>地域の子供たちを対象とした3x3体験会を実施しました。</p>
+                        <a href="#" class="read-more">READ MORE</a>
+                    </div>
+                </article>
+                <article class="report-card scroll-reveal" style="animation-delay: 0.2s;">
+                    <div class="report-img"></div>
+                    <div class="report-content">
+                        <span class="date">2025.11.05</span>
+                        <h4>新ルール適用のお知らせ</h4>
+                        <p>FIBA 3x3公式ルールの改定に伴い、当リーグでも新ルールを適用します。</p>
+                        <a href="#" class="read-more">READ MORE</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="section sponsors">
+        <div class="container">
+            <h2 class="section-title">OFFICIAL <span class="accent">PARTNERS</span></h2>
+            <div class="sponsors-grid">
+                <!-- Placeholders for Logos -->
+                <div class="sponsor-logo">LOGO 01</div>
+                <div class="sponsor-logo">LOGO 02</div>
+                <div class="sponsor-logo">LOGO 03</div>
+                <div class="sponsor-logo">LOGO 04</div>
+            </div>
+            <div class="sponsor-cta">
+                <p>スポンサー募集中。共にシーンを盛り上げましょう。</p>
+                <a href="#entry" class="btn btn-outline">BECOME A PARTNER</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2>3x3<span class="accent">ASSOC.</span></h2>
+                    <p>STREET TO ELITE</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">PRIVACY POLICY</a>
+                    <a href="#">TERMS OF USE</a>
+                    <a href="#">CONTACT</a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 3x3 BASKETBALL ASSOCIATION. ALL RIGHTS RESERVED.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

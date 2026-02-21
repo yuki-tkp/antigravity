@@ -1,12 +1,25 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google"; // Using Inter as requested
+import { Anton, Noto_Sans_JP, Roboto } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 
-const inter = Inter({
+const anton = Anton({
+  weight: "400",
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-heading",
+  display: "swap",
+});
+
+const noto = Noto_Sans_JP({
+  weight: ["400", "700", "900"],
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const roboto = Roboto({
+  weight: ["400", "700", "900"],
+  subsets: ["latin"],
+  variable: "--font-roboto",
   display: "swap",
 });
 
@@ -22,12 +35,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`${inter.variable}`} style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-        <Header />
-        <div style={{ flex: 1 }}>
-          {children}
-        </div>
-        <Footer />
+      <body className={`${anton.variable} ${noto.variable} ${roboto.variable}`} style={{ minHeight: '100vh' }}>
+        {children}
       </body>
     </html>
   );

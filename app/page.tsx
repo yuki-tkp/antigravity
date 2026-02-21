@@ -1,25 +1,25 @@
-import Link from "next/link";
-import Image from "next/image";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import Hero from "@/components/sections/Hero";
+import LiveMatch from "@/components/sections/LiveMatch";
+import About from "@/components/sections/About";
+import LeagueInfo from "@/components/sections/LeagueInfo";
+import Reports from "@/components/sections/Reports";
+import Sponsors from "@/components/sections/Sponsors";
 
 export default function Home() {
   return (
-    <main className="container" style={{ padding: "4rem 1rem", textAlign: "center" }}>
-      <div style={{ marginBottom: "2rem" }}>
-        <Image
-          src="/images/k3a-logo.png"
-          alt="北九州3on3協会 K3A Logo"
-          width={600}
-          height={300}
-          style={{ maxWidth: "100%", height: "auto" }}
-          priority
-        />
-      </div>
-      <p style={{ marginBottom: "2rem" }}>Coming Soon...</p>
-      <div style={{ display: "flex", gap: "1rem", justifyContent: "center" }}>
-        {/* Temporary links for development navigation */}
-        <Link href="/admin" className="btn btn-primary">Admin Dashboard</Link>
-        <Link href="/entry" className="btn btn-accent">Entry Form</Link>
-      </div>
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <LiveMatch />
+        <About />
+        <LeagueInfo />
+        <Reports />
+        <Sponsors />
+      </main>
+      <Footer />
+    </>
   );
 }

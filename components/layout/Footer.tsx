@@ -1,40 +1,91 @@
+'use client';
+
 import Link from 'next/link';
-import styles from './Footer.module.css';
 
 export default function Footer() {
     return (
-        <footer className={styles.footer}>
-            <div className={styles.container}>
-                <div className={styles.grid}>
-                    <div className={styles.column}>
-                        <h3 style={{ color: 'white' }}>Kitakyushu 3on3 Association</h3>
-                        <p style={{ color: '#ccc', fontSize: '0.9rem', lineHeight: '1.6' }}>
-                            北九州から世界へ。<br />
-                            3x3バスケットボールの普及と<br />
-                            選手育成に取り組んでいます。
-                        </p>
+        <footer className="footer">
+            <div className="container">
+                <div className="footer-content">
+                    <div className="footer-brand">
+                        <h2>3x3<span className="accent">ASSOC.</span></h2>
+                        <p>STREET TO ELITE</p>
                     </div>
-                    <div className={styles.column}>
-                        <h3 style={{ color: 'white' }}>Links</h3>
-                        <ul>
-                            <li><Link href="/news">News</Link></li>
-                            <li><Link href="/tournament">Leagues</Link></li>
-                            <li><Link href="/entry">Entry</Link></li>
-                            <li><Link href="/about">About Us</Link></li>
-                        </ul>
-                    </div>
-                    <div className={styles.column}>
-                        <h3 style={{ color: 'white' }}>Contact</h3>
-                        <ul>
-                            <li><Link href="/contact">お問い合わせ</Link></li>
-                            <li><Link href="/privacy">プライバシーポリシー</Link></li>
-                        </ul>
+                    <div className="footer-links">
+                        <Link href="/privacy">PRIVACY POLICY</Link>
+                        <Link href="/terms">TERMS OF USE</Link>
+                        <Link href="/contact">CONTACT</Link>
                     </div>
                 </div>
-                <div className={styles.copyright}>
-                    &copy; {new Date().getFullYear()} Kitakyushu 3on3 Association. All Rights Reserved.
+                <div className="copyright">
+                    &copy; {new Date().getFullYear()} 3x3 BASKETBALL ASSOCIATION. ALL RIGHTS RESERVED.
                 </div>
             </div>
+
+            <style jsx>{`
+        .footer {
+          background: #000;
+          padding: 60px 0 30px;
+          border-top: 1px solid #111;
+          color: white;
+        }
+
+        .footer-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+          font-family: var(--font-heading);
+          font-size: 1.8rem;
+          margin-bottom: 5px;
+        }
+
+        .footer-brand p {
+          color: var(--text-muted);
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+
+        .footer-links {
+          display: flex;
+          gap: 2rem;
+        }
+
+        .footer-links :global(a) {
+          font-size: 0.8rem;
+          color: var(--text-muted);
+          font-weight: bold;
+          transition: color 0.3s ease;
+        }
+
+        .footer-links :global(a):hover {
+          color: var(--accent-color);
+        }
+
+        .copyright {
+          text-align: center;
+          font-size: 0.8rem;
+          color: #333;
+          padding-top: 30px;
+          border-top: 1px solid #111;
+        }
+
+        @media screen and (max-width: 768px) {
+          .footer-content {
+            flex-direction: column;
+            gap: 2rem;
+            text-align: center;
+          }
+          
+          .footer-links {
+            flex-direction: column;
+            gap: 1rem;
+          }
+        }
+      `}</style>
         </footer>
     );
 }

@@ -17,11 +17,23 @@ export default function Sponsors({ sponsors }: { sponsors: Sponsor[] }) {
             const isClickable = sponsor.url && sponsor.url.trim() !== '';
             const CardContent = (
               <div className="sponsor-card">
-                <div className="sponsor-logo-placeholder">
-                  {sponsor.name === 'Partner Slot' ? (
-                    <span className="placeholder-text">AVAILABLE</span>
+                <div className="sponsor-logo-container">
+                  {sponsor.logoUrl ? (
+                    <div className="sponsor-logo-wrapper">
+                      <img
+                        src={sponsor.logoUrl}
+                        alt={sponsor.name}
+                        className="sponsor-logo-img"
+                      />
+                    </div>
                   ) : (
-                    sponsor.name
+                    <div className="sponsor-logo-placeholder">
+                      {sponsor.name === 'Partner Slot' ? (
+                        <span className="placeholder-text">AVAILABLE</span>
+                      ) : (
+                        sponsor.name
+                      )}
+                    </div>
                   )}
                 </div>
               </div>
@@ -101,11 +113,40 @@ export default function Sponsors({ sponsors }: { sponsors: Sponsor[] }) {
           cursor: default;
         }
 
+        .sponsor-logo-container {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .sponsor-logo-wrapper {
+          width: 80%;
+          height: 80%;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .sponsor-logo-img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+          filter: grayscale(1) brightness(1.2);
+          transition: all 0.3s ease;
+        }
+
+        .sponsor-link:hover .sponsor-logo-img {
+          filter: grayscale(0) brightness(1);
+        }
+
         .sponsor-logo-placeholder {
           font-family: var(--font-heading);
           font-weight: 900;
           color: #eee;
-          font-size: 0.9rem;
+          font-size: 0.8rem;
           letter-spacing: 1px;
           text-transform: uppercase;
           line-height: 1.2;

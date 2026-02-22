@@ -8,26 +8,26 @@
     {
         "id": "2",
         "name": "ワイエス総合設備",
-        "logoUrl": "",
-        "url": ""
+        "logoUrl": "/images/sponsors/ys-setsubi.png",
+        "url": "https://ys-setsubi.com/"
     },
     {
         "id": "3",
-        "name": "Partner Slot",
-        "logoUrl": "",
-        "url": ""
+        "name": "11TAP",
+        "logoUrl": "/images/sponsors/11tap.png",
+        "url": "https://11tap.life/"
     },
     {
         "id": "4",
-        "name": "Partner Slot",
-        "logoUrl": "",
-        "url": ""
+        "name": "アンサー倶楽部",
+        "logoUrl": "/images/sponsors/answer-club.png",
+        "url": "https://answerclub.co.jp/"
     },
     {
         "id": "5",
-        "name": "Partner Slot",
-        "logoUrl": "",
-        "url": ""
+        "name": "ウチヤマホールディングス",
+        "logoUrl": "/images/sponsors/uchiyama-holdings.png",
+        "url": "https://www.uchiyama-gr.jp/"
     },
     {
         "id": "6",

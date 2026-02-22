@@ -1,117 +1,117 @@
 [
     {
         "id": "1",
-        "name": "株式会社 昭電テックス",
-        "logoUrl": "",
-        "url": "https://shoden-tec.jp/"
+        "name": "シャボン玉石けん",
+        "logoUrl": "/images/sponsors/shabondama.png",
+        "url": "https://www.shabondama.com/"
     },
     {
         "id": "2",
+        "name": "NORTH NINE",
+        "logoUrl": "/images/sponsors/north-nine.png",
+        "url": "https://north-nine.com/"
+    },
+    {
+        "id": "3",
+        "name": "フレックスメンテ",
+        "logoUrl": "/images/sponsors/flex-mente.png",
+        "url": "https://www.flex-mente.com/"
+    },
+    {
+        "id": "4",
+        "name": "ミクニ",
+        "logoUrl": "/images/sponsors/mikuni.png",
+        "url": "https://mikuni-sc.com/"
+    },
+    {
+        "id": "5",
+        "name": "メディプラス",
+        "logoUrl": "/images/sponsors/medi-plus.png",
+        "url": "https://mediplus.co.jp/"
+    },
+    {
+        "id": "6",
+        "name": "三島光産",
+        "logoUrl": "/images/sponsors/mishima-kosan.png",
+        "url": "https://www.mishimakosan.com/"
+    },
+    {
+        "id": "7",
+        "name": "司法書士法人CSP",
+        "logoUrl": "/images/sponsors/csp.png",
+        "url": "https://csp-office.com/"
+    },
+    {
+        "id": "8",
+        "name": "紫苑タクシー",
+        "logoUrl": "/images/sponsors/shion-taxi.png",
+        "url": "https://shion-taxi.com/"
+    },
+    {
+        "id": "9",
+        "name": "至誠法律事務所",
+        "logoUrl": "/images/sponsors/shisei-law.png",
+        "url": "https://shisei-law.jp/"
+    },
+    {
+        "id": "10",
+        "name": "株式会社新大倉",
+        "logoUrl": "/images/sponsors/shin-ohkura.png",
+        "url": "https://shinohkura.com/"
+    },
+    {
+        "id": "11",
+        "name": "有限会社川原興産",
+        "logoUrl": "/images/sponsors/kawahara-kosan.png",
+        "url": ""
+    },
+    {
+        "id": "12",
+        "name": "株式会社田園興産",
+        "logoUrl": "/images/sponsors/tazono.png",
+        "url": "https://www.tazono.com/"
+    },
+    {
+        "id": "13",
+        "name": "有限会社藤原不動産",
+        "logoUrl": "/images/sponsors/fujiwara-fudosan.png",
+        "url": "https://fujiwara-fudosan.com/"
+    },
+    {
+        "id": "14",
+        "name": "株式会社不動産ふたみん",
+        "logoUrl": "/images/sponsors/fudosan-futamin.png",
+        "url": "https://futamin.jp/"
+    },
+    {
+        "id": "15",
+        "name": "株式会社 昭電テックス",
+        "logoUrl": "/images/sponsors/shoden-tecx.png",
+        "url": "https://shoden-tec.jp/"
+    },
+    {
+        "id": "16",
         "name": "ワイエス総合設備",
         "logoUrl": "/images/sponsors/ys-setsubi.png",
         "url": "https://ys-setsubi.com/"
     },
     {
-        "id": "3",
+        "id": "17",
         "name": "11TAP",
         "logoUrl": "/images/sponsors/11tap.png",
         "url": "https://11tap.life/"
     },
     {
-        "id": "4",
+        "id": "18",
         "name": "アンサー倶楽部",
         "logoUrl": "/images/sponsors/answer-club.png",
         "url": "https://answerclub.co.jp/"
     },
     {
-        "id": "5",
+        "id": "19",
         "name": "ウチヤマホールディングス",
         "logoUrl": "/images/sponsors/uchiyama-holdings.png",
         "url": "https://www.uchiyama-gr.jp/"
-    },
-    {
-        "id": "6",
-        "name": "Partner Slot",
-        "logoUrl": "",
-        "url": ""
-    },
-    {
-        "id": "7",
-        "name": "Partner Slot",
-        "logoUrl": "",
-        "url": ""
-    },
-    {
-        "id": "8",
-        "name": "Partner Slot",
-        "logoUrl": "",
-        "url": ""
-    },
-    {
-        "id": "9",
-        "name": "Partner Slot",
-        "logoUrl": "",
-        "url": ""
-    },
-    {
-        "id": "10",
-        "name": "Partner Slot",
-        "logoUrl": "",
-        "url": ""
-    },
-    {
-        "id": "11",
-        "name": "Partner Slot",
-        "logoUrl": "",
-        "url": ""
-    },
-    {
-        "id": "12",
-        "name": "Partner Slot",
-        "logoUrl": "",
-        "url": ""
-    },
-    {
-        "id": "13",
-        "name": "Partner Slot",
-        "logoUrl": "",
-        "url": ""
-    },
-    {
-        "id": "14",
-        "name": "Partner Slot",
-        "logoUrl": "",
-        "url": ""
-    },
-    {
-        "id": "15",
-        "name": "Partner Slot",
-        "logoUrl": "",
-        "url": ""
-    },
-    {
-        "id": "16",
-        "name": "Partner Slot",
-        "logoUrl": "",
-        "url": ""
-    },
-    {
-        "id": "17",
-        "name": "Partner Slot",
-        "logoUrl": "",
-        "url": ""
-    },
-    {
-        "id": "18",
-        "name": "Partner Slot",
-        "logoUrl": "",
-        "url": ""
-    },
-    {
-        "id": "19",
-        "name": "Partner Slot",
-        "logoUrl": "",
-        "url": ""
     },
     {
         "id": "20",

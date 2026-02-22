@@ -77,7 +77,7 @@ export default function Sponsors({ sponsors }: { sponsors: Sponsor[] }) {
         }
 
         .sponsor-card {
-          aspect-ratio: 16/10;
+          aspect-ratio: 16/5;
           background: var(--bg-dark-secondary);
           display: flex;
           justify-content: center;
@@ -86,7 +86,7 @@ export default function Sponsors({ sponsors }: { sponsors: Sponsor[] }) {
           transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
           position: relative;
           overflow: hidden;
-          padding: 1rem;
+          padding: 0.5rem 1rem;
           text-align: center;
         }
 

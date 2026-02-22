@@ -10,9 +10,9 @@ export default function Header() {
                     <Image
                         src="/images/k3a-logo.png"
                         alt="KITAKYUSHU 3on3 ASSOCIATION"
-                        width={400}
-                        height={200}
-                        style={{ height: 'auto', width: 'auto', maxHeight: '100px' }}
+                        width={80}
+                        height={40}
+                        style={{ height: 'auto', width: '80px' }}
                         priority
                     />
                 </Link>

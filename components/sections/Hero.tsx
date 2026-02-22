@@ -45,7 +45,11 @@ export default function Hero() {
             priority
           />
         </div>
-        <p className="hero-tagline">STREET TO ELITE</p>
+        <p className="hero-tagline">
+          <span className="line"></span>
+          STREET TO ELITE
+          <span className="line"></span>
+        </p>
         <div className="hero-actions">
           <Link href="/entry" className="btn btn-primary">JOIN THE LEAGUE</Link>
           <Link href="/admin" className="btn btn-secondary">ADMIN DASHBOARD</Link>
@@ -132,37 +136,66 @@ export default function Hero() {
 
         .hero-tagline {
           font-family: var(--font-heading);
-          font-size: 1.5rem;
-          letter-spacing: 8px;
-          color: var(--feature-color);
+          font-size: 1.8rem;
+          letter-spacing: 12px;
+          color: var(--text-main);
           margin-bottom: 3rem;
           text-transform: uppercase;
+          display: flex;
+          align-items: center;
+          gap: 20px;
           animation: fadeInUp 1.2s ease-out 0.3s both;
+        }
+
+        .hero-tagline .line {
+          height: 2px;
+          width: 60px;
+          background: var(--accent-color);
         }
 
         .hero-actions {
           display: flex;
-          gap: 1.5rem;
+          gap: 2rem;
           animation: fadeInUp 1.2s ease-out 0.6s both;
         }
 
-        :global(.btn-secondary) {
-          background: rgba(255, 255, 255, 0.1);
+        :global(.btn-primary) {
+          padding: 1.2rem 3rem;
+          font-size: 1.4rem;
+          font-weight: 900;
+          letter-spacing: 1px;
+          background: var(--accent-color);
           color: white;
-          border: 1px solid rgba(255, 255, 255, 0.3);
-          padding: 1rem 2rem;
+          text-decoration: none;
+          clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+          transition: all 0.3s ease;
+        }
+
+        :global(.btn-primary:hover) {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 30px var(--accent-glow);
+          background: white;
+          color: black;
+        }
+
+        :global(.btn-secondary) {
+          background: rgba(255, 255, 255, 0.05);
+          color: white;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          padding: 1.2rem 2.5rem;
           text-decoration: none;
           font-family: var(--font-heading);
+          font-size: 1.2rem;
           letter-spacing: 2px;
           transition: all 0.3s ease;
-          backdrop-filter: blur(5px);
+          backdrop-filter: blur(10px);
+          clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
         }
 
         :global(.btn-secondary:hover) {
-          background: rgba(255, 255, 255, 0.2);
+          background: rgba(255, 255, 255, 0.15);
           border-color: white;
-          transform: translateY(-3px);
-          box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+          transform: translateY(-5px);
         }
 
         @keyframes fadeInDown {
@@ -183,32 +216,60 @@ export default function Hero() {
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 10px;
-          opacity: 0.7;
-          animation: bounce 2s infinite;
+          gap: 15px;
+          opacity: 0.8;
           z-index: 10;
         }
 
         .scroll-down span {
           font-family: var(--font-heading);
-          letter-spacing: 2px;
-          font-size: 0.9rem;
+          letter-spacing: 4px;
+          font-size: 0.8rem;
           color: white;
+          text-transform: uppercase;
         }
 
         .scroll-down .arrow {
-          width: 2px;
-          height: 40px;
-          background: linear-gradient(to bottom, #fff, transparent);
+          width: 1px;
+          height: 60px;
+          background: linear-gradient(to bottom, var(--accent-color), transparent);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .scroll-down .arrow::after {
+          content: '';
+          position: absolute;
+          top: -100%;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: white;
+          animation: scrollLine 2s infinite ease-in-out;
+        }
+
+        @keyframes scrollLine {
+          0% { top: -100%; }
+          50% { top: 0; }
+          100% { top: 100%; }
         }
 
         @media (max-width: 768px) {
           .logo-wrapper {
-            max-width: 85%;
+            max-width: 90%;
           }
           .hero-tagline {
             font-size: 1rem;
             letter-spacing: 4px;
+            gap: 10px;
+          }
+          .hero-tagline .line {
+            width: 30px;
+          }
+          .hero-actions {
+            flex-direction: column;
+            width: 100%;
+            padding: 0 2rem;
           }
         }
       `}</style>

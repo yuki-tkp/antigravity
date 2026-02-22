@@ -43,3 +43,10 @@ export type Entry = {
 export type EntryFormValues = Omit<Entry, 'id' | 'createdAt'> & {
     agreed: true;
 };
+export type Report = {
+    id: string;
+    title: string;
+    date: string;
+    description: string;
+    imageUrl?: string;
+};

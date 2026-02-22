@@ -6,8 +6,12 @@ import About from "@/components/sections/About";
 import LeagueInfo from "@/components/sections/LeagueInfo";
 import Reports from "@/components/sections/Reports";
 import Sponsors from "@/components/sections/Sponsors";
+import Contact from "@/components/sections/Contact";
+import { getReports, getSponsors } from "@/lib/content";
 
-export default function Home() {
+export default async function Home() {
+  const reportsData = await getReports();
+  const sponsorsData = await getSponsors();
   return (
     <>
       <Navbar />
@@ -16,8 +20,9 @@ export default function Home() {
         <LiveMatch />
         <About />
         <LeagueInfo />
-        <Reports />
-        <Sponsors />
+        <Reports reports={reportsData} />
+        <Sponsors sponsors={sponsorsData} />
+        <Contact />
       </main>
       <Footer />
     </>

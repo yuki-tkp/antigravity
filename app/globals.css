@@ -1,15 +1,20 @@
 :root {
-  --bg-dark: #0a0a0a;
-  --bg-dark-secondary: #111111;
-  --text-main: #ffffff;
-  --text-muted: #888888;
-  --accent-color: #ff3300;
-  /* Neon Orange */
-  --accent-glow: rgba(255, 51, 0, 0.5);
-  --feature-color: #ccff00;
-  /* Neon Lime */
+  --bg-dark: hsl(240, 10%, 4%);
+  --bg-dark-secondary: hsl(240, 10%, 7%);
+  --text-main: hsl(0, 0%, 100%);
+  --text-muted: hsl(0, 0%, 60%);
+  --accent-color: hsl(12, 100%, 50%);
+  /* Vibrant Orange-Red */
+  --accent-glow: hsla(12, 100%, 50%, 0.4);
+  --feature-color: hsl(75, 100%, 50%);
+  /* Vibrant Lime */
+  --primary-blue: hsl(210, 100%, 50%);
 
-  --transition-speed: 0.3s;
+  --glass-bg: rgba(20, 20, 20, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+
+  --transition-speed: 0.4s;
   --container-width: 1200px;
 }
 

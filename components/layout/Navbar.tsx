@@ -2,44 +2,53 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+
 
 export default function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-    const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => setIsOpen(!isOpen);
 
-    return (
-        <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-            <div className="container nav-container">
-                <Link href="/" className="logo">
-                    3x3<span className="accent">ASSOC.</span>
-                </Link>
+  return (
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+      <div className="container nav-container">
+        <Link href="/" className="logo">
+          <Image
+            src="/images/k3a-logo.png"
+            alt="K3A"
+            width={80}
+            height={40}
+            style={{ height: 'auto', width: '80px' }}
+          />
+        </Link>
 
-                <ul className={`nav-links ${isOpen ? 'nav-active' : ''}`}>
-                    <li><Link href="#about" onClick={() => setIsOpen(false)}>ABOUT</Link></li>
-                    <li><Link href="#league" onClick={() => setIsOpen(false)}>LEAGUE</Link></li>
-                    <li><Link href="/entry" onClick={() => setIsOpen(false)}>ENTRY</Link></li>
-                    <li><Link href="#reports" onClick={() => setIsOpen(false)}>REPORTS</Link></li>
-                    <li><Link href="#sponsors" onClick={() => setIsOpen(false)}>SPONSORS</Link></li>
-                </ul>
+        <ul className={`nav-links ${isOpen ? 'nav-active' : ''}`}>
+          <li><Link href="#about" onClick={() => setIsOpen(false)}>ABOUT</Link></li>
+          <li><Link href="#league" onClick={() => setIsOpen(false)}>LEAGUE</Link></li>
+          <li><Link href="/entry" onClick={() => setIsOpen(false)}>ENTRY</Link></li>
+          <li><Link href="#reports" onClick={() => setIsOpen(false)}>REPORTS</Link></li>
+          <li><Link href="#sponsors" onClick={() => setIsOpen(false)}>SPONSORS</Link></li>
+          <li><Link href="#contact" onClick={() => setIsOpen(false)}>CONTACT</Link></li>
+        </ul>
 
-                <div className={`burger ${isOpen ? 'toggle' : ''}`} onClick={toggleMenu}>
-                    <div className="line1"></div>
-                    <div className="line2"></div>
-                    <div className="line3"></div>
-                </div>
-            </div>
+        <div className={`burger ${isOpen ? 'toggle' : ''}`} onClick={toggleMenu}>
+          <div className="line1"></div>
+          <div className="line2"></div>
+          <div className="line3"></div>
+        </div>
+      </div>
 
-            <style jsx>{`
+      <style jsx>{`
         .navbar {
           position: fixed;
           top: 0;
@@ -149,6 +158,6 @@ export default function Navbar() {
           }
         }
       `}</style>
-        </nav>
-    );
+    </nav>
+  );
 }

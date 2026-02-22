@@ -1,0 +1,23 @@
+[
+    {
+        "id": "1",
+        "date": "2026.01.15",
+        "title": "WINTER CUP 予選大会レポート",
+        "description": "熱戦が繰り広げられた予選大会の様子をお届けします。MVPはTeam Xの田中選手でした。",
+        "imageUrl": "/images/reports/report-1.jpg"
+    },
+    {
+        "id": "2",
+        "date": "2025.12.20",
+        "title": "年末チャリティイベント開催",
+        "description": "地域の子供たちを対象とした3x3体験会を実施しました。約100名の参加者と共にバスケットボールを楽しみました。",
+        "imageUrl": "/images/reports/report-2.jpg"
+    },
+    {
+        "id": "3",
+        "date": "2025.11.05",
+        "title": "新ルール適用のお知らせ",
+        "description": "FIBA 3x3公式ルールの改定に伴い、当リーグでも新ルールを適用します。主な変更点は以下の通りです。",
+        "imageUrl": "/images/reports/report-3.jpg"
+    }
+]

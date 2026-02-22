@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { NewsItem, Tournament, Sponsor, Entry } from './types';
+import { NewsItem, Tournament, Sponsor, Entry, Report } from './types';
 
 const dataDir = path.join(process.cwd(), 'data');
 
@@ -63,4 +63,14 @@ export async function saveEntry(entry: Entry): Promise<void> {
     const entries = await getEntries();
     entries.push(entry);
     writeJsonFile('entries.json', entries);
+}
+
+// Reports
+export async function getReports(): Promise<Report[]> {
+    return readJsonFile<Report>('reports.json');
+}
+
+export async function getTournamentById(id: string): Promise<Tournament | undefined> {
+    const list = await getTournaments();
+    return list.find(t => t.id === id);
 }

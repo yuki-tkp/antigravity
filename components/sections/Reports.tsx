@@ -1,76 +1,78 @@
 'use client';
 
 import Link from 'next/link';
+import { Report } from '@/lib/types';
 
-export default function Reports() {
-    const reports = [
-        {
-            date: '2026.01.15',
-            title: 'WINTER CUP 予選大会レポート',
-            desc: '熱戦が繰り広げられた予選大会の様子をお届けします。MVPはTeam Xの...',
-        },
-        {
-            date: '2025.12.20',
-            title: '年末チャリティイベント開催',
-            desc: '地域の子供たちを対象とした3x3体験会を実施しました。',
-        },
-        {
-            date: '2025.11.05',
-            title: '新ルール適用のお知らせ',
-            desc: 'FIBA 3x3公式ルールの改定に伴い、当リーグでも新ルールを適用します。',
-        },
-    ];
+export default function Reports({ reports }: { reports: Report[] }) {
 
-    return (
-        <section id="reports" className="section reports">
-            <div className="container">
-                <h2 className="section-title">ACTIVITY <span className="accent">REPORTS</span></h2>
-                <div className="reports-grid">
-                    {reports.map((report, index) => (
-                        <article key={index} className="report-card">
-                            <div className="report-img"></div>
-                            <div className="report-content">
-                                <span className="date">{report.date}</span>
-                                <h4>{report.title}</h4>
-                                <p>{report.desc}</p>
-                                <Link href="#" className="read-more">READ MORE</Link>
-                            </div>
-                        </article>
-                    ))}
-                </div>
-            </div>
+  return (
+    <section id="reports" className="section reports">
+      <div className="container">
+        <div className="section-header">
+          <h2 className="section-title">ACTIVITY <span className="accent">REPORTS</span></h2>
+          <p className="section-desc">協会の活動記録や大会レポートを定期的にお届けします。</p>
+        </div>
+        <div className="reports-grid">
+          {reports.map((report) => (
+            <article key={report.id} className="report-card">
+              <div className="report-img">
+                <span className="tag">REPORT</span>
+              </div>
+              <div className="report-content">
+                <span className="date">{report.date}</span>
+                <h4>{report.title}</h4>
+                <p>{report.description.length > 60 ? report.description.substring(0, 60) + '...' : report.description}</p>
+                <Link href={`/news/${report.id}`} className="read-more">
+                  READ MORE
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
 
-            <style jsx>{`
+      <style jsx>{`
         .reports {
           background: var(--bg-dark-secondary);
+          position: relative;
+        }
+
+        .section-header {
+          text-align: center;
+          margin-bottom: 4rem;
         }
 
         .reports-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 2rem;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          gap: 2.5rem;
         }
 
         .report-card {
-          background: #151515;
+          background: var(--bg-dark);
           overflow: hidden;
-          transition: all 0.3s ease;
-          border: 1px solid #222;
+          transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+          border: 1px solid var(--glass-border);
+          box-shadow: var(--glass-shadow);
+          display: flex;
+          flex-direction: column;
         }
 
         .report-card:hover {
-          transform: scale(1.02);
+          transform: translateY(-10px);
           border-color: var(--accent-color);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
         .report-img {
-          height: 200px;
-          background: #333;
+          height: 240px;
+          background: #111;
           position: relative;
           overflow: hidden;
-          background:
-            linear-gradient(45deg, #111 25%, #222 25%, #222 50%, #111 50%, #111 75%, #222 75%, #222 100%);
-          background-size: 20px 20px;
+          background: 
+            linear-gradient(45deg, #050505 25%, #111 25%, #111 50%, #050505 50%, #050505 75%, #111 75%, #111 100%);
+          background-size: 30px 30px;
         }
 
         .report-img::after {
@@ -80,11 +82,27 @@ export default function Reports() {
           left: 0;
           width: 100%;
           height: 100%;
-          background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+        }
+
+        .tag {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          background: var(--accent-color);
+          color: white;
+          padding: 4px 12px;
+          font-family: var(--font-heading);
+          font-size: 0.7rem;
+          letter-spacing: 2px;
+          z-index: 5;
         }
 
         .report-content {
-          padding: 20px;
+          padding: 2.5rem;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
         }
 
         .report-content .date {
@@ -92,30 +110,50 @@ export default function Reports() {
           color: var(--accent-color);
           font-weight: bold;
           font-family: var(--font-heading);
+          letter-spacing: 2px;
+          margin-bottom: 0.5rem;
+          display: block;
         }
 
         .report-content h4 {
-          font-size: 1.4rem;
-          margin: 10px 0;
+          font-size: 1.6rem;
+          margin-bottom: 1rem;
           line-height: 1.3;
           color: white;
         }
 
         .report-content p {
-          font-size: 0.9rem;
-          color: #aaa;
-          margin-bottom: 20px;
+          font-size: 1rem;
+          color: var(--text-muted);
+          margin-bottom: 2rem;
+          line-height: 1.6;
+          flex: 1;
         }
 
         .read-more {
           font-size: 0.9rem;
-          font-weight: bold;
+          font-weight: 700;
           text-transform: uppercase;
-          border-bottom: 2px solid var(--accent-color);
           color: white;
-          padding-bottom: 2px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-family: var(--font-heading);
+          letter-spacing: 2px;
+          transition: gap 0.3s ease;
+        }
+
+        .read-more:hover {
+          color: var(--accent-color);
+          gap: 15px;
+        }
+
+        @media screen and (max-width: 768px) {
+          .reports-grid {
+            grid-template-columns: 1fr;
+          }
         }
       `}</style>
-        </section>
-    );
+    </section>
+  );
 }

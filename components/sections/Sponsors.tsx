@@ -13,13 +13,36 @@ export default function Sponsors({ sponsors }: { sponsors: Sponsor[] }) {
           <p className="section-desc">北九州 3on3 協会の活動を支えてくださっているパートナー企業様です。</p>
         </div>
         <div className="sponsors-grid">
-          {sponsors.map((sponsor) => (
-            <div key={sponsor.id} className="sponsor-card">
-              <div className="sponsor-logo-placeholder">
-                {sponsor.name}
+          {sponsors.map((sponsor) => {
+            const isClickable = sponsor.url && sponsor.url.trim() !== '';
+            const CardContent = (
+              <div className="sponsor-card">
+                <div className="sponsor-logo-placeholder">
+                  {sponsor.name === 'Partner Slot' ? (
+                    <span className="placeholder-text">AVAILABLE</span>
+                  ) : (
+                    sponsor.name
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+
+            return isClickable ? (
+              <a
+                href={sponsor.url}
+                key={sponsor.id}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="sponsor-link"
+              >
+                {CardContent}
+              </a>
+            ) : (
+              <div key={sponsor.id} className="sponsor-link disabled">
+                {CardContent}
+              </div>
+            );
+          })}
         </div>
         <div className="sponsor-cta">
           <p>共に北九州の3x3を盛り上げませんか？</p>
@@ -43,36 +66,55 @@ export default function Sponsors({ sponsors }: { sponsors: Sponsor[] }) {
 
         .sponsors-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 2rem;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 1.5rem;
           margin-bottom: 6rem;
         }
 
+        .sponsor-link {
+          text-decoration: none;
+          display: block;
+        }
+
         .sponsor-card {
-          aspect-ratio: 16/9;
+          aspect-ratio: 16/10;
           background: var(--bg-dark-secondary);
           display: flex;
           justify-content: center;
           align-items: center;
           border: 1px solid var(--glass-border);
-          transition: all 0.3s ease;
+          transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
           position: relative;
           overflow: hidden;
+          padding: 1rem;
+          text-align: center;
         }
 
-        .sponsor-card:hover {
+        .sponsor-link:hover .sponsor-card {
           border-color: var(--accent-color);
-          transform: scale(1.05);
-          box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+          transform: translateY(-5px);
+          box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(255, 60, 0, 0.1);
+          background: rgba(255, 255, 255, 0.05);
+        }
+
+        .sponsor-link.disabled {
+          cursor: default;
         }
 
         .sponsor-logo-placeholder {
           font-family: var(--font-heading);
           font-weight: 900;
-          color: #333;
-          font-size: 1.2rem;
-          letter-spacing: 2px;
+          color: #eee;
+          font-size: 0.9rem;
+          letter-spacing: 1px;
           text-transform: uppercase;
+          line-height: 1.2;
+        }
+
+        .placeholder-text {
+          color: #333;
+          font-size: 0.7rem;
+          letter-spacing: 2px;
         }
 
         .sponsor-cta {
@@ -80,21 +122,31 @@ export default function Sponsors({ sponsors }: { sponsors: Sponsor[] }) {
           padding: 4rem;
           background: var(--bg-dark-secondary);
           border: 1px dashed var(--glass-border);
+          border-radius: 4px;
         }
 
-        .sponsor-cta p {
-          font-size: 1.2rem;
-          font-weight: bold;
-          margin-bottom: 2rem;
-          color: var(--text-muted);
-        }
-
-        @media (max-width: 576px) {
+        @media (max-width: 1200px) {
           .sponsors-grid {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(4, 1fr);
           }
-          .sponsor-cta {
-            padding: 2rem;
+        }
+
+        @media (max-width: 992px) {
+          .sponsors-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+
+        @media (max-width: 768px) {
+          .sponsors-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .sponsors-grid {
+            grid-template-columns: 1fr;
           }
         }
       `}</style>

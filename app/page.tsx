@@ -1,7 +1,6 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
-import LiveMatch from "@/components/sections/LiveMatch";
 import About from "@/components/sections/About";
 import LeagueInfo from "@/components/sections/LeagueInfo";
 import Reports from "@/components/sections/Reports";
@@ -17,7 +16,6 @@ export default async function Home() {
       <Navbar />
       <main>
         <Hero />
-        <LiveMatch />
         <About />
         <LeagueInfo />
         <Reports reports={reportsData} />

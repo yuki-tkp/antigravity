@@ -134,12 +134,11 @@ export default function Sponsors({ sponsors }: { sponsors: Sponsor[] }) {
           max-width: 100%;
           max-height: 100%;
           object-fit: contain;
-          filter: grayscale(1) brightness(1.2);
           transition: all 0.3s ease;
         }
 
         .sponsor-link:hover .sponsor-logo-img {
-          filter: grayscale(0) brightness(1);
+          transform: scale(1.05);
         }
 
         .sponsor-logo-placeholder {

@@ -8,6 +8,8 @@ import Sponsors from "@/components/sections/Sponsors";
 import Contact from "@/components/sections/Contact";
 import { getReports, getSponsors } from "@/lib/content";
 
+export const dynamic = 'force-dynamic';
+
 export default async function Home() {
   const reportsData = await getReports();
   const sponsorsData = await getSponsors();

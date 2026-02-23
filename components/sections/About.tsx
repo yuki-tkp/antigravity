@@ -18,7 +18,9 @@ export default function About() {
             </p>
           </div>
           <div className="about-image">
-            <div className="img-placeholder">3x3 ACTION</div>
+            <div className="image-container">
+              <img src="/images/about-member.png" alt="3x3 Member" className="member-image" />
+            </div>
           </div>
         </div>
       </div>
@@ -73,22 +75,27 @@ export default function About() {
           font-size: 1.1rem;
         }
 
-        .img-placeholder {
+        .image-container {
           width: 100%;
-          aspect-ratio: 4/5;
+          aspect-ratio: 1/1;
           background: var(--bg-dark-secondary);
           display: flex;
           justify-content: center;
           align-items: center;
           border: 1px solid var(--glass-border);
-          font-family: var(--font-heading);
-          font-size: 1.5rem;
-          color: #333;
           position: relative;
           box-shadow: var(--glass-shadow);
+          overflow: hidden;
         }
 
-        .img-placeholder::after {
+        .member-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+
+        .image-container::after {
           content: '';
           position: absolute;
           top: 30px;

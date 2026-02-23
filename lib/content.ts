@@ -46,11 +46,11 @@ export async function saveTournaments(tournaments: Tournament[]): Promise<void> 
 
 // Sponsors
 export async function getSponsors(): Promise<Sponsor[]> {
-    return readJsonFile<Sponsor>('sponsors.json');
+    return readJsonFile<Sponsor>('partners.json');
 }
 
 export async function saveSponsors(sponsors: Sponsor[]): Promise<void> {
-    writeJsonFile('sponsors.json', sponsors);
+    writeJsonFile('partners.json', sponsors);
 }
 
 // Entries (Secret, verify logic later about where to store)

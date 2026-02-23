@@ -100,5 +100,11 @@
         "name": "ウチヤマホールディングス",
         "logoUrl": "/images/sponsors/uchiyama-holdings.png",
         "url": "https://www.uchiyama-gr.jp/"
+    },
+    {
+        "id": "20",
+        "name": "昭電テックス",
+        "logoUrl": "/images/sponsors/shoden-tecx.png",
+        "url": ""
     }
 ]

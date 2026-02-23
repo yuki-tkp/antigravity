@@ -16,6 +16,7 @@ export default function Reports({ reports }: { reports: Report[] }) {
           {reports.map((report) => (
             <article key={report.id} className="report-card">
               <div className="report-img">
+                <img src={report.imageUrl} alt={report.title} className="report-background-img" />
                 <span className="tag">REPORT</span>
               </div>
               <div className="report-content">
@@ -67,12 +68,19 @@ export default function Reports({ reports }: { reports: Report[] }) {
 
         .report-img {
           height: 240px;
-          background: #111;
           position: relative;
           overflow: hidden;
-          background: 
-            linear-gradient(45deg, #050505 25%, #111 25%, #111 50%, #050505 50%, #050505 75%, #111 75%, #111 100%);
-          background-size: 30px 30px;
+        }
+
+        .report-background-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .report-card:hover .report-background-img {
+          transform: scale(1.1);
         }
 
         .report-img::after {

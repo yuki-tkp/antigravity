@@ -60,12 +60,6 @@
         "url": "https://shinohkura.com/"
     },
     {
-        "id": "11",
-        "name": "有限会社川原興産",
-        "logoUrl": "/images/sponsors/kawahara-kosan.png",
-        "url": ""
-    },
-    {
         "id": "12",
         "name": "株式会社田園興産",
         "logoUrl": "/images/sponsors/tazono.png",
@@ -82,12 +76,6 @@
         "name": "株式会社不動産ふたみん",
         "logoUrl": "/images/sponsors/fudosan-futamin.png",
         "url": "https://futamin.jp/"
-    },
-    {
-        "id": "15",
-        "name": "株式会社 昭電テックス",
-        "logoUrl": "/images/sponsors/shoden-tecx.png",
-        "url": "https://shoden-tec.jp/"
     },
     {
         "id": "16",
@@ -112,11 +100,5 @@
         "name": "ウチヤマホールディングス",
         "logoUrl": "/images/sponsors/uchiyama-holdings.png",
         "url": "https://www.uchiyama-gr.jp/"
-    },
-    {
-        "id": "20",
-        "name": "Partner Slot",
-        "logoUrl": "",
-        "url": ""
     }
 ]

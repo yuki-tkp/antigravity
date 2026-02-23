@@ -13,48 +13,50 @@ export default function Sponsors({ sponsors }: { sponsors: Sponsor[] }) {
           <p className="section-desc">北九州 3on3 協会の活動を支えてくださっているパートナー企業様です。</p>
         </div>
         <div className="sponsors-grid">
-          {sponsors.map((sponsor) => {
-            const isClickable = sponsor.url && sponsor.url.trim() !== '';
-            const CardContent = (
-              <div className="sponsor-card">
-                <div className="sponsor-logo-container">
-                  {sponsor.logoUrl ? (
-                    <div className="sponsor-logo-wrapper">
-                      <img
-                        src={sponsor.logoUrl}
-                        alt={sponsor.name}
-                        className="sponsor-logo-img"
-                      />
-                    </div>
-                  ) : (
-                    <div className="sponsor-logo-placeholder">
-                      {sponsor.name === 'Partner Slot' ? (
-                        <span className="placeholder-text">AVAILABLE</span>
-                      ) : (
-                        sponsor.name
-                      )}
-                    </div>
-                  )}
+          {sponsors
+            .filter(sponsor => sponsor.logoUrl && sponsor.logoUrl !== "" && sponsor.name !== "Partner Slot")
+            .map((sponsor) => {
+              const isClickable = sponsor.url && sponsor.url.trim() !== '';
+              const CardContent = (
+                <div className="sponsor-card">
+                  <div className="sponsor-logo-container">
+                    {sponsor.logoUrl ? (
+                      <div className="sponsor-logo-wrapper">
+                        <img
+                          src={sponsor.logoUrl}
+                          alt={sponsor.name}
+                          className="sponsor-logo-img"
+                        />
+                      </div>
+                    ) : (
+                      <div className="sponsor-logo-placeholder">
+                        {sponsor.name === 'Partner Slot' ? (
+                          <span className="placeholder-text">AVAILABLE</span>
+                        ) : (
+                          sponsor.name
+                        )}
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-            );
+              );
 
-            return isClickable ? (
-              <a
-                href={sponsor.url}
-                key={sponsor.id}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="sponsor-link"
-              >
-                {CardContent}
-              </a>
-            ) : (
-              <div key={sponsor.id} className="sponsor-link disabled">
-                {CardContent}
-              </div>
-            );
-          })}
+              return isClickable ? (
+                <a
+                  href={sponsor.url}
+                  key={sponsor.id}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="sponsor-link"
+                >
+                  {CardContent}
+                </a>
+              ) : (
+                <div key={sponsor.id} className="sponsor-link disabled">
+                  {CardContent}
+                </div>
+              );
+            })}
         </div>
         <div className="sponsor-cta">
           <p>共に北九州の3x3を盛り上げませんか？</p>

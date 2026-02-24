@@ -66,40 +66,34 @@
         "url": "https://north-nine.net/"
     },
     {
-        "id": "1",
-        "name": "シャボン玉石けん",
-        "logoUrl": "/images/sponsors/shabondama.png",
-        "url": "https://www.shabondama.com/"
-    },
-    {
-        "id": "5",
-        "name": "メディプラス",
-        "logoUrl": "/images/sponsors/medi-plus.png",
-        "url": "https://mediplus.co.jp/"
-    },
-    {
         "id": "7",
         "name": "司法書士法人CSP",
         "logoUrl": "/images/sponsors/csp.png",
-        "url": "https://csp-office.com/"
+        "url": "https://cspjs.com/"
+    },
+    {
+        "id": "1",
+        "name": "シャボン玉石けん",
+        "logoUrl": "/images/sponsors/shabondama.png",
+        "url": "https://www.shabon.com/"
     },
     {
         "id": "16",
         "name": "ワイエス総合設備",
         "logoUrl": "/images/sponsors/ys-setsubi.png",
-        "url": "https://ys-setsubi.com/"
+        "url": ""
     },
     {
         "id": "17",
         "name": "11TAP",
         "logoUrl": "/images/sponsors/11tap.png",
-        "url": "https://11tap.life/"
+        "url": "https://11tap-beer.com/"
     },
     {
-        "id": "18",
-        "name": "アンサー倶楽部",
-        "logoUrl": "/images/sponsors/answer-club.png",
-        "url": "https://answerclub.co.jp/"
+        "id": "21",
+        "name": "株式会社エルザ",
+        "logoUrl": "/images/sponsors/eruza.png",
+        "url": "http://www.eruza.co.jp/"
     },
     {
         "id": "19",
@@ -108,9 +102,21 @@
         "url": "https://www.uchiyama-gr.jp/"
     },
     {
+        "id": "18",
+        "name": "アンサー倶楽部",
+        "logoUrl": "/images/sponsors/answer-club.png",
+        "url": "https://answerclub.co.jp/"
+    },
+    {
         "id": "20",
         "name": "昭電テックス",
         "logoUrl": "/images/sponsors/shoden-tecx.png",
-        "url": ""
+        "url": "http://www.shoden-tecx.co.jp/"
+    },
+    {
+        "id": "5",
+        "name": "メディプラス",
+        "logoUrl": "/images/sponsors/medi-plus.png",
+        "url": "https://pharmabox.jp/corporate/583439"
     }
 ]

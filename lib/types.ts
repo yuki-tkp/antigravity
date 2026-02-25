@@ -50,5 +50,6 @@ export type Report = {
     description: string;
     imageUrl?: string;
     images?: string[];
+    videoUrl?: string;
     details?: string;
 };

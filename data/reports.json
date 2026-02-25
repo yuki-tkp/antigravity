@@ -28,9 +28,15 @@
     },
     {
         "id": "3",
-        "date": "2025.11.05",
-        "title": "新ルール適用のお知らせ",
-        "description": "FIBA 3x3公式ルールの改定に伴い、当リーグでも新ルールを適用します。主な変更点は以下の通りです。",
-        "imageUrl": "/images/reports/report-3.jpg"
+        "date": "2025.10.5",
+        "title": "戸畑区【汐井町公園】3on3文教祭cup共同開催",
+        "description": "戸畑区の高校生、戸畑区役所と連携！高校生の3on3リーグ開催",
+        "imageUrl": "/images/reports/report-3-1.jpg",
+        "images": [
+            "/images/reports/report-3-1.jpg",
+            "/images/reports/report-3-2.jpg",
+            "/images/reports/report-3-3.jpg"
+        ],
+        "details": "戸畑区の高校生、戸畑区役所と連携！高校生の3on3リーグ開催"
     }
 ]

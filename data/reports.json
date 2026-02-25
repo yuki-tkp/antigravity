@@ -14,10 +14,16 @@
     },
     {
         "id": "2",
-        "date": "2025.12.20",
-        "title": "年末チャリティイベント開催",
-        "description": "地域の子供たちを対象とした3x3体験会を実施しました。約100名の参加者と共にバスケットボールを楽しみました。",
-        "imageUrl": "/images/reports/report-2.jpg"
+        "date": "2025.9.20",
+        "title": "アーバンスポーツフェス開催",
+        "description": "北九州の各スポーツ協会が結集！アーバンスポーツ協会を発足し、スポーツフェスを開催しました。",
+        "imageUrl": "/images/reports/report-2-1.jpg",
+        "images": [
+            "/images/reports/report-2-1.jpg",
+            "/images/reports/report-2-2.jpg",
+            "/images/reports/report-2-3.jpg"
+        ],
+        "details": "北九州の各スポーツ協会が結集！アーバンスポーツ協会を発足し、スポーツフェスを開催しました。"
     },
     {
         "id": "3",

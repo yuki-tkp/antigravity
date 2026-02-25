@@ -43,10 +43,10 @@ export default async function ReportDetailPage({ params }: { params: Promise<{ i
 
                 <section style={{ padding: '4rem 0' }}>
                     <div className="container">
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
                             {report.images?.map((img, index) => (
-                                <div key={index} style={{ aspectRatio: '16 / 9', overflow: 'hidden', borderRadius: '8px', border: '1px solid var(--glass-border)' }}>
-                                    <img src={img} alt={`${report.title} ${index + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                <div key={index} style={{ border: '1px solid var(--glass-border)', borderRadius: '8px', overflow: 'hidden', background: '#000' }}>
+                                    <img src={img} alt={`${report.title} ${index + 1}`} style={{ width: '100%', height: 'auto', display: 'block' }} />
                                 </div>
                             ))}
                         </div>

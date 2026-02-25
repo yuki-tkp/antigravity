@@ -49,4 +49,6 @@ export type Report = {
     date: string;
     description: string;
     imageUrl?: string;
+    images?: string[];
+    details?: string;
 };

@@ -10,20 +10,16 @@ export default function Reports({ reports }: { reports: Report[] }) {
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">ACTIVITY <span className="accent">REPORTS</span></h2>
-          <p className="section-desc">協会の活動記録や大会レポートを定期的にお届けします。</p>
+          <p className="section-desc">協会の活動記録や大会レポート</p>
         </div>
         <div className="reports-grid">
           {reports.map((report) => (
             <article key={report.id} className="report-card">
-              <div className="report-img">
-                <img src={report.imageUrl} alt={report.title} className="report-background-img" />
-                <span className="tag">REPORT</span>
-              </div>
               <div className="report-content">
                 <span className="date">{report.date}</span>
                 <h4>{report.title}</h4>
-                <p>{report.description.length > 60 ? report.description.substring(0, 60) + '...' : report.description}</p>
-                <Link href={`/news/${report.id}`} className="read-more">
+                <p>{report.description.length > 100 ? report.description.substring(0, 100) + '...' : report.description}</p>
+                <Link href={`/reports/${report.id}`} className="read-more">
                   READ MORE
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </Link>

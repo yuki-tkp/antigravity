@@ -67,7 +67,11 @@ export async function saveEntry(entry: Entry): Promise<void> {
 
 // Reports
 export async function getReports(): Promise<Report[]> {
-    return readJsonFile<Report>('reports.json');
+    return readJsonFile<Report>('reports.json').sort((a, b) => {
+        const dateA = new Date(a.date.replace(/\./g, '/')).getTime();
+        const dateB = new Date(b.date.replace(/\./g, '/')).getTime();
+        return dateB - dateA;
+    });
 }
 
 export async function getTournamentById(id: string): Promise<Tournament | undefined> {

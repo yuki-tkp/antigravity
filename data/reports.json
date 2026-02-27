@@ -53,5 +53,16 @@
             "/images/reports/report-4-5.jpg"
         ],
         "details": "黒崎駅前のふれあい通りをジャック！若者のバスケットシーンを応援！"
+    },
+    {
+        "id": "5",
+        "date": "2025.12.2",
+        "title": "URBAN SPORTS FESTIVAL開催",
+        "description": "World Skeateboard Street 北九州　のサイドイベント！潮風公園にて熱戦開催！",
+        "imageUrl": "/images/reports/report-5.jpg",
+        "images": [
+            "/images/reports/report-5-1.jpg"
+        ],
+        "details": "World Skeateboard Street 北九州　のサイドイベント！潮風公園にて熱戦開催！"
     }
 ]

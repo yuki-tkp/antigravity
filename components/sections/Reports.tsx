@@ -3,7 +3,17 @@
 import Link from 'next/link';
 import { Report } from '@/lib/types';
 
-export default function Reports({ reports }: { reports: Report[] }) {
+export default function Reports({
+  reports,
+  limit,
+  showArchiveButton = false
+}: {
+  reports: Report[],
+  limit?: number,
+  showArchiveButton?: boolean
+}) {
+
+  const displayedReports = limit ? reports.slice(0, limit) : reports;
 
   return (
     <section id="reports" className="section reports">
@@ -13,7 +23,7 @@ export default function Reports({ reports }: { reports: Report[] }) {
           <p className="section-desc">協会の活動記録や大会レポート</p>
         </div>
         <div className="reports-grid">
-          {reports.map((report) => (
+          {displayedReports.map((report) => (
             <article key={report.id} className="report-card">
               <div className="report-content">
                 <span className="date">{report.date}</span>
@@ -27,9 +37,56 @@ export default function Reports({ reports }: { reports: Report[] }) {
             </article>
           ))}
         </div>
+
+        {showArchiveButton && reports.length > (limit || 0) && (
+          <div className="archive-link-container">
+            <Link href="/reports/archive" className="archive-link">
+              Archive
+            </Link>
+          </div>
+        )}
       </div>
 
       <style jsx>{`
+        .archive-link-container {
+          display: flex;
+          justify-content: center;
+          margin-top: 5rem;
+          margin-bottom: 2rem;
+        }
+
+        .archive-link {
+          color: var(--text-muted);
+          font-family: var(--font-heading);
+          font-size: 2.4rem;
+          letter-spacing: 8px;
+          text-transform: uppercase;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          position: relative;
+          padding: 15px 30px;
+        }
+
+        .archive-link:hover {
+          color: white;
+          letter-spacing: 12px;
+        }
+
+        .archive-link::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 0;
+          height: 2px;
+          background: var(--accent-color);
+          transition: all 0.3s ease;
+          transform: translateX(-50%);
+        }
+
+        .archive-link:hover::after {
+          width: 80px;
+        }
         .reports {
           background: var(--bg-dark-secondary);
           position: relative;

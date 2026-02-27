@@ -20,7 +20,7 @@ export default async function Home() {
         <Hero />
         <About />
         <LeagueInfo />
-        <Reports reports={reportsData} />
+        <Reports reports={reportsData} limit={5} showArchiveButton={true} />
         <Sponsors sponsors={sponsorsData} />
         <Contact />
       </main>

@@ -52,7 +52,6 @@ export default function Hero() {
         </p>
         <div className="hero-actions">
           <Link href="/entry" className="btn btn-primary">JOIN THE LEAGUE</Link>
-          <Link href="/admin" className="btn btn-secondary">ADMIN DASHBOARD</Link>
         </div>
       </div>
 
@@ -178,25 +177,6 @@ export default function Hero() {
           color: black;
         }
 
-        :global(.btn-secondary) {
-          background: rgba(255, 255, 255, 0.05);
-          color: white;
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          padding: 1.2rem 2.5rem;
-          text-decoration: none;
-          font-family: var(--font-heading);
-          font-size: 1.2rem;
-          letter-spacing: 2px;
-          transition: all 0.3s ease;
-          backdrop-filter: blur(10px);
-          clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
-        }
-
-        :global(.btn-secondary:hover) {
-          background: rgba(255, 255, 255, 0.15);
-          border-color: white;
-          transform: translateY(-5px);
-        }
 
         @keyframes fadeInDown {
           from { opacity: 0; transform: translateY(-30px); }

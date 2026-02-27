@@ -64,5 +64,32 @@
             "/images/reports/report-5-1.jpg"
         ],
         "details": "World Skeateboard Street 北九州　のサイドイベント！潮風公園にて熱戦開催！"
+    },
+    {
+        "id": "6",
+        "date": "2024.9.28",
+        "title": "都市型3on3 【Bisco Ball】始動！",
+        "description": "北九州3on3協会　本格始動！　Bisco Ball　１Dayリーグをリバーウォーク北九州・ミスティックコートにて開催！西日本から10チーム集結し、DJ・MJの熱狂の中、3on3プレイヤーが大暴れ！",
+        "imageUrl": "/images/reports/report-6-1.jpg",
+        "images": [
+            "/images/reports/report-6-1.jpg",
+            "/images/reports/report-6-2.jpg"
+        ],
+        "details": "北九州3on3協会　本格始動！　Bisco Ball　１Dayリーグをリバーウォーク北九州・ミスティックコートにて開催！西日本から10チーム集結し、DJ・MJの熱狂の中、3on3プレイヤーが大暴れ！"
+    },
+    {
+        "id": "7",
+        "date": "2024.11.16",
+        "title": "３on３バスケ・パルクール世界大会サイドイベント開催",
+        "description": "勝山公園で行われたアーバンスポーツ「パルクール世界大会」の隣、リバーウォーク北九州にて２回目開催！",
+        "imageUrl": "/images/reports/report-7-1.jpg",
+        "images": [
+            "/images/reports/report-7-1.jpg",
+            "/images/reports/report-7-2.jpg",
+            "/images/reports/report-7-3.jpg",
+            "/images/reports/report-7-4.jpg",
+            "/images/reports/report-7-5.jpg"
+        ],
+        "details": "勝山公園で行われたアーバンスポーツ「パルクール世界大会」の隣、リバーウォーク北九州にて２回目開催！"
     }
 ]

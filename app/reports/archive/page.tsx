@@ -28,7 +28,7 @@ export default async function ReportsArchivePage() {
                     </div>
                 </header>
 
-                <Reports reports={reports} />
+                <Reports reports={reports} offset={5} />
 
                 <div style={{ padding: '4rem 0 8rem', textAlign: 'center' }}>
                     <div className="container">

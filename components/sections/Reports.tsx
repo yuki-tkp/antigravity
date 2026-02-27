@@ -6,14 +6,16 @@ import { Report } from '@/lib/types';
 export default function Reports({
   reports,
   limit,
+  offset = 0,
   showArchiveButton = false
 }: {
   reports: Report[],
   limit?: number,
+  offset?: number,
   showArchiveButton?: boolean
 }) {
 
-  const displayedReports = limit ? reports.slice(0, limit) : reports;
+  const displayedReports = reports.slice(offset, limit ? offset + limit : reports.length);
 
   return (
     <section id="reports" className="section reports">
@@ -38,10 +40,10 @@ export default function Reports({
           ))}
         </div>
 
-        {showArchiveButton && reports.length > (limit || 0) && (
+        {showArchiveButton && (
           <div className="archive-link-container">
             <Link href="/reports/archive" className="archive-link">
-              Archive
+              <span className="archive-text">ARCHIVE</span>
             </Link>
           </div>
         )}
@@ -56,15 +58,26 @@ export default function Reports({
         }
 
         .archive-link {
-          color: var(--text-muted);
-          font-family: var(--font-heading);
-          font-size: 2.4rem;
-          letter-spacing: 8px;
-          text-transform: uppercase;
           text-decoration: none;
           transition: all 0.3s ease;
           position: relative;
           padding: 15px 30px;
+        }
+
+        .archive-text {
+          color: var(--text-muted);
+          font-family: var(--font-heading), sans-serif;
+          font-size: 3rem;
+          font-style: italic;
+          font-weight: 400;
+          text-transform: uppercase;
+          line-height: 1;
+          display: block;
+        }
+
+        .archive-link:hover .archive-text {
+          color: white;
+          letter-spacing: 12px;
         }
 
         .archive-link:hover {

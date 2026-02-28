@@ -13,6 +13,7 @@ export default function LeagueInfo() {
       prize: '¥20,000',
       buttonText: 'ENTRY',
       link: '/entry',
+      visible: false,
     },
     {
       season: 'SEASON 2026',
@@ -23,8 +24,11 @@ export default function LeagueInfo() {
       prize: '-',
       buttonText: 'COMING SOON',
       link: '#',
+      visible: false,
     },
   ];
+
+  const visibleLeagues = leagues.filter(league => league.visible);
 
   return (
     <section id="league" className="section league">
@@ -33,40 +37,46 @@ export default function LeagueInfo() {
         <p className="section-desc">週末に開催される短期決戦。勝利を手にするのは誰だ。</p>
 
         <div className="league-cards">
-          {leagues.map((league, index) => (
-            <div key={index} className="league-card">
-              <div className="card-header">
-                <span className="season">{league.season}</span>
-                <h3>{league.title}</h3>
-              </div>
-              <div className="card-body">
-                <div className="info-item">
-                  <div className="info-label">SCHEDULE</div>
-                  <div className="info-value">{league.date}</div>
+          {visibleLeagues.length > 0 ? (
+            visibleLeagues.map((league, index) => (
+              <div key={index} className="league-card">
+                <div className="card-header">
+                  <span className="season">{league.season}</span>
+                  <h3>{league.title}</h3>
                 </div>
-                <div className="info-item">
-                  <div className="info-label">LOCATION</div>
-                  <div className="info-value">{league.place}</div>
-                </div>
-                <div className="info-meta">
-                  <div className="meta-item">
-                    <span className="label">FEE</span>
-                    <span className="value">{league.fee}</span>
+                <div className="card-body">
+                  <div className="info-item">
+                    <div className="info-label">SCHEDULE</div>
+                    <div className="info-value">{league.date}</div>
                   </div>
-                  <div className="meta-item">
-                    <span className="label">PRIZE</span>
-                    <span className="value">{league.prize}</span>
+                  <div className="info-item">
+                    <div className="info-label">LOCATION</div>
+                    <div className="info-value">{league.place}</div>
                   </div>
+                  <div className="info-meta">
+                    <div className="meta-item">
+                      <span className="label">FEE</span>
+                      <span className="value">{league.fee}</span>
+                    </div>
+                    <div className="meta-item">
+                      <span className="label">PRIZE</span>
+                      <span className="value">{league.prize}</span>
+                    </div>
+                  </div>
+                  <Link href={league.link} className="btn btn-primary full-width">
+                    {league.buttonText}
+                  </Link>
+                  {league.buttonText === 'APPLY NOW' && (
+                    <Link href="/tournament" className="more-info">VIEW PROGRAM DETAILS</Link>
+                  )}
                 </div>
-                <Link href={league.link} className="btn btn-primary full-width">
-                  {league.buttonText}
-                </Link>
-                {league.buttonText === 'APPLY NOW' && (
-                  <Link href="/tournament" className="more-info">VIEW PROGRAM DETAILS</Link>
-                )}
               </div>
+            ))
+          ) : (
+            <div className="no-leagues">
+              <p>現在、エントリー可能な大会はありません。<br />次回の開催をお待ちください。</p>
             </div>
-          ))}
+          )}
         </div>
       </div>
 
@@ -185,6 +195,20 @@ export default function LeagueInfo() {
 
         .more-info:hover {
           color: white;
+        }
+
+        .no-leagues {
+          grid-column: 1 / -1;
+          text-align: center;
+          padding: 4rem 2rem;
+          background: var(--bg-dark-secondary);
+          border: 1px dashed var(--glass-border);
+          color: var(--text-muted);
+        }
+
+        .no-leagues p {
+          font-size: 1.2rem;
+          line-height: 1.8;
         }
 
         @media (max-width: 768px) {

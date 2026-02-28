@@ -43,7 +43,9 @@ export default function Reports({
         {showArchiveButton && (
           <div className="archive-link-container">
             <Link href="/reports/archive" className="archive-link">
-              <span className="archive-text">ARCHIVE</span>
+              <span className="archive-text">
+                ARCHIVE <span className="archive-subtext">-過去の記事-</span>
+              </span>
             </Link>
           </div>
         )}
@@ -72,7 +74,16 @@ export default function Reports({
           font-weight: 400;
           text-transform: uppercase;
           line-height: 1;
-          display: block;
+          display: flex;
+          align-items: baseline;
+          gap: 1.5rem;
+        }
+
+        .archive-subtext {
+          font-size: 1.5rem;
+          font-style: normal;
+          text-transform: none;
+          letter-spacing: 0;
         }
 
         .archive-link:hover .archive-text {

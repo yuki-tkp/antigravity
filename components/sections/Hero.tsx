@@ -50,9 +50,6 @@ export default function Hero() {
           STREET TO ELITE
           <span className="line"></span>
         </p>
-        <div className="hero-actions">
-          <Link href="/entry" className="btn btn-primary">JOIN THE LEAGUE</Link>
-        </div>
       </div>
 
       <div className="scroll-down">

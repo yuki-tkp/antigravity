@@ -1,6 +1,6 @@
 :root {
   --bg-dark: hsl(240, 10%, 4%);
-  --bg-dark-secondary: hsl(240, 10%, 7%);
+  --bg-dark-secondary: hsl(240, 10%, 4%);
   --text-main: hsl(0, 0%, 100%);
   --text-muted: hsl(0, 0%, 60%);
   --accent-color: hsl(12, 100%, 50%);

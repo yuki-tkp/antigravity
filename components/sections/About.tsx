@@ -16,6 +16,13 @@ export default function About() {
               アーバンスポーツ 3x3バスケットボールは、スピーディーな試合展開、激しいフィジカルコンタクト、そしてストリートから生まれる独自のカルチャー。<br />
               我々は、この熱狂を地域に根付かせ、次世代の才能を育成し、北九州の街をスポーツで盛り上げるためのプラットフォームを提供します。
             </p>
+            <div className="leadership-wrapper">
+              <div className="leadership">
+                <div className="leadership-row">北九州3on3協会</div>
+                <div className="leadership-row"><span className="label">会長</span>緒方　欣忠</div>
+                <div className="leadership-row"><span className="label">副会長</span>大塚　祐貴</div>
+              </div>
+            </div>
           </div>
           <div className="about-image">
             <div className="image-container">
@@ -72,6 +79,30 @@ export default function About() {
           color: var(--text-muted);
           margin-bottom: 1.5rem;
           line-height: 1.8;
+          font-size: 1.1rem;
+        }
+        
+        .leadership-wrapper {
+          display: flex;
+          justify-content: flex-end;
+          margin-top: 2.5rem;
+        }
+        
+        .leadership {
+          color: white;
+          font-size: 1.1rem;
+          line-height: 2;
+        }
+
+        .leadership-row {
+          display: flex;
+          align-items: center;
+        }
+
+        .leadership-row .label {
+          display: inline-block;
+          width: 5rem;
+          color: white;
           font-size: 1.1rem;
         }
 

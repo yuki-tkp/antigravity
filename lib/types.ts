@@ -53,3 +53,9 @@ export type Report = {
     videoUrl?: string;
     details?: string;
 };
+export type Banner = {
+    id: string;
+    title: string;
+    imageUrl: string;
+    url: string;
+};

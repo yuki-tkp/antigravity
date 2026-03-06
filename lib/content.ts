@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { NewsItem, Tournament, Sponsor, Entry, Report } from './types';
+import { NewsItem, Tournament, Sponsor, Entry, Report, Banner } from './types';
 
 const dataDir = path.join(process.cwd(), 'data');
 
@@ -77,4 +77,13 @@ export async function getReports(): Promise<Report[]> {
 export async function getTournamentById(id: string): Promise<Tournament | undefined> {
     const list = await getTournaments();
     return list.find(t => t.id === id);
+}
+
+// Special Websites (Banners)
+export async function getSpecialWebsites(): Promise<Banner[]> {
+    return readJsonFile<Banner>('special_websites.json');
+}
+
+export async function saveSpecialWebsites(banners: Banner[]): Promise<void> {
+    writeJsonFile('special_websites.json', banners);
 }

@@ -4,87 +4,91 @@ import { Banner } from '@/lib/types';
 import { useRef, useEffect, useState } from 'react';
 
 export default function SpecialWebsites({ banners }: { banners: Banner[] }) {
-    const scrollRef = useRef<HTMLDivElement>(null);
-    const [canScrollLeft, setCanScrollLeft] = useState(false);
-    const [canScrollRight, setCanScrollRight] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
 
-    const checkScroll = () => {
-        if (scrollRef.current) {
-            const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-            setCanScrollLeft(scrollLeft > 0);
-            setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 5); // 5px buffer
-        }
-    };
+  const checkScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 5); // 5px buffer
+    }
+  };
 
-    useEffect(() => {
-        checkScroll();
-        window.addEventListener('resize', checkScroll);
-        return () => window.removeEventListener('resize', checkScroll);
-    }, [banners]);
+  useEffect(() => {
+    checkScroll();
+    window.addEventListener('resize', checkScroll);
+    return () => window.removeEventListener('resize', checkScroll);
+  }, [banners]);
 
-    const scroll = (direction: 'left' | 'right') => {
-        if (scrollRef.current) {
-            const { clientWidth } = scrollRef.current;
-            const scrollAmount = direction === 'left' ? -clientWidth : clientWidth;
-            scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            // Timeout to check scroll after animation
-            setTimeout(checkScroll, 500);
-        }
-    };
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const { clientWidth } = scrollRef.current;
+      const scrollAmount = direction === 'left' ? -clientWidth : clientWidth;
+      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      // Timeout to check scroll after animation
+      setTimeout(checkScroll, 500);
+    }
+  };
 
-    if (banners.length === 0) return null;
+  return (
+    <section id="special" className="section special-websites">
+      <div className="container">
+        <h2 className="section-title">SPECIAL <span className="accent">WEBSITE</span></h2>
 
-    return (
-        <section id="special" className="section special-websites">
-            <div className="container">
-                <h2 className="section-title">SPECIAL <span className="accent">WEBSITE</span></h2>
+        {banners.length > 0 ? (
+          <div className="slider-container">
+            {banners.length > 3 && (
+              <>
+                <button
+                  className={`slider-nav prev ${canScrollLeft ? 'visible' : ''}`}
+                  onClick={() => scroll('left')}
+                  aria-label="Previous"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button
+                  className={`slider-nav next ${canScrollRight ? 'visible' : ''}`}
+                  onClick={() => scroll('right')}
+                  aria-label="Next"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </>
+            )}
 
-                <div className="slider-container">
-                    {banners.length > 3 && (
-                        <>
-                            <button
-                                className={`slider-nav prev ${canScrollLeft ? 'visible' : ''}`}
-                                onClick={() => scroll('left')}
-                                aria-label="Previous"
-                            >
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                            </button>
-                            <button
-                                className={`slider-nav next ${canScrollRight ? 'visible' : ''}`}
-                                onClick={() => scroll('right')}
-                                aria-label="Next"
-                            >
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                            </button>
-                        </>
-                    )}
-
-                    <div
-                        className="banners-track"
-                        ref={scrollRef}
-                        onScroll={checkScroll}
-                    >
-                        {banners.map((banner) => (
-                            <a
-                                key={banner.id}
-                                href={banner.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="banner-item"
-                            >
-                                <div className="banner-image-wrapper">
-                                    <img src={banner.imageUrl} alt={banner.title} className="banner-img" />
-                                    <div className="banner-overlay">
-                                        <span className="visit-text">VISIT SITE</span>
-                                    </div>
-                                </div>
-                            </a>
-                        ))}
+            <div
+              className={`banners-track ${banners.length <= 3 ? 'centered' : ''}`}
+              ref={scrollRef}
+              onScroll={checkScroll}
+            >
+              {banners.map((banner) => (
+                <a
+                  key={banner.id}
+                  href={banner.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="banner-item"
+                >
+                  <div className="banner-image-wrapper">
+                    <img src={banner.imageUrl} alt={banner.title} className="banner-img" />
+                    <div className="banner-overlay">
+                      <span className="visit-text">VISIT SITE</span>
                     </div>
-                </div>
+                  </div>
+                </a>
+              ))}
             </div>
+          </div>
+        ) : (
+          <div className="coming-soon">
+            <p>COMING SOON</p>
+          </div>
+        )}
+      </div>
 
-            <style jsx>{`
+      <style jsx>{`
         .special-websites {
           background: var(--bg-dark);
           padding: 100px 0;
@@ -102,23 +106,45 @@ export default function SpecialWebsites({ banners }: { banners: Banner[] }) {
           gap: 2rem;
           overflow-x: auto;
           scroll-snap-type: x mandatory;
-          scrollbar-width: none; /* Firefox */
-          -ms-overflow-style: none; /* IE/Edge */
+          scrollbar-width: none;
+          -ms-overflow-style: none;
           padding: 10px 0;
         }
 
+        .banners-track.centered {
+          justify-content: center;
+        }
+
         .banners-track::-webkit-scrollbar {
-          display: none; /* Chrome/Safari */
+          display: none;
         }
 
         .banner-item {
           flex: 0 0 calc((100% - 4rem) / 3);
+          max-width: 400px;
           scroll-snap-align: start;
           transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         .banner-item:hover {
           transform: translateY(-5px);
+        }
+
+        .coming-soon {
+          margin-top: 4rem;
+          text-align: center;
+          padding: 4rem;
+          background: var(--bg-dark-secondary);
+          border: 1px dashed var(--glass-border);
+          border-radius: 4px;
+        }
+
+        .coming-soon p {
+          font-family: var(--font-heading);
+          font-size: 2rem;
+          color: var(--text-muted);
+          letter-spacing: 4px;
+          font-style: italic;
         }
 
         .banner-image-wrapper {
@@ -225,6 +251,6 @@ export default function SpecialWebsites({ banners }: { banners: Banner[] }) {
           }
         }
       `}</style>
-        </section>
-    );
+    </section>
+  );
 }

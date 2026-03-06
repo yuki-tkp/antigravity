@@ -91,7 +91,7 @@ export default function Sponsors({ sponsors }: { sponsors: Sponsor[] }) {
 
         .sponsor-card {
           aspect-ratio: 16/5;
-          background: var(--bg-dark-secondary);
+          background: #ffffff;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -99,7 +99,7 @@ export default function Sponsors({ sponsors }: { sponsors: Sponsor[] }) {
           transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
           position: relative;
           overflow: hidden;
-          padding: 0;
+          padding: 8px;
           text-align: center;
         }
 
@@ -107,7 +107,7 @@ export default function Sponsors({ sponsors }: { sponsors: Sponsor[] }) {
           border-color: var(--accent-color);
           transform: translateY(-5px);
           box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(255, 60, 0, 0.1);
-          background: rgba(255, 255, 255, 0.05);
+          background: #ffffff;
         }
 
         .sponsor-link.disabled {
@@ -120,6 +120,7 @@ export default function Sponsors({ sponsors }: { sponsors: Sponsor[] }) {
           display: flex;
           justify-content: center;
           align-items: center;
+          background: #ffffff;
         }
 
         .sponsor-logo-wrapper {
@@ -134,12 +135,12 @@ export default function Sponsors({ sponsors }: { sponsors: Sponsor[] }) {
         .sponsor-logo-img {
           width: 100%;
           height: 100%;
-          object-fit: cover;
+          object-fit: contain;
           transition: all 0.3s ease;
         }
 
         .sponsor-link:hover .sponsor-logo-img {
-          transform: scale(1.05);
+          transform: scale(1.02);
         }
 
         .sponsor-logo-placeholder {

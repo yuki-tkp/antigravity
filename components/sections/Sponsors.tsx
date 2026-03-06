@@ -99,7 +99,7 @@ export default function Sponsors({ sponsors }: { sponsors: Sponsor[] }) {
           transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
           position: relative;
           overflow: hidden;
-          padding: 0.5rem 1rem;
+          padding: 0;
           text-align: center;
         }
 
@@ -123,8 +123,8 @@ export default function Sponsors({ sponsors }: { sponsors: Sponsor[] }) {
         }
 
         .sponsor-logo-wrapper {
-          width: 80%;
-          height: 80%;
+          width: 100%;
+          height: 100%;
           position: relative;
           display: flex;
           justify-content: center;
@@ -132,9 +132,9 @@ export default function Sponsors({ sponsors }: { sponsors: Sponsor[] }) {
         }
 
         .sponsor-logo-img {
-          max-width: 100%;
-          max-height: 100%;
-          object-fit: contain;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
           transition: all 0.3s ease;
         }
 

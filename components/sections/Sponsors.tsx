@@ -74,7 +74,6 @@ export default function Sponsors({ sponsors }: { sponsors: Sponsor[] }) {
         }
 
         .section-header {
-          text-align: center;
           margin-bottom: 5rem;
         }
 

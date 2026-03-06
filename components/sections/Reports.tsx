@@ -117,7 +117,6 @@ export default function Reports({
         }
 
         .section-header {
-          text-align: center;
           margin-bottom: 4rem;
         }
 

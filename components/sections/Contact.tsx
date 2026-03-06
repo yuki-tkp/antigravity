@@ -59,7 +59,7 @@ export default function Contact() {
 
                         <div className="info-item">
                             <span className="label">INSTAGRAM</span>
-                            <a href="https://instagram.com/K3a_2024" target="_blank" rel="noopener noreferrer" className="value">@K3a_2024</a>
+                            <a href="https://instagram.com/k3a__2024" target="_blank" rel="noopener noreferrer" className="value">@k3a__2024</a>
                         </div>
                     </div>
 

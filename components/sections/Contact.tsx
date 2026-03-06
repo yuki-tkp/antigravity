@@ -56,10 +56,7 @@ export default function Contact() {
                     <div className="contact-info">
                         <h3>GET IN TOUCH</h3>
                         <p>大会、リーグに関するお問い合わせ、協賛のご相談など、お気軽にご連絡ください。</p>
-                        <div className="info-item">
-                            <span className="label">E-MAIL</span>
-                            <a href="mailto:tkpuu15@gmail.com" className="value">tkpuu15@gmail.com</a>
-                        </div>
+
                         <div className="info-item">
                             <span className="label">INSTAGRAM</span>
                             <a href="https://instagram.com/K3a_2024" target="_blank" rel="noopener noreferrer" className="value">@K3a_2024</a>

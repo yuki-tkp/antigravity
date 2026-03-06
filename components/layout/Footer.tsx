@@ -13,11 +13,7 @@ export default function Footer() {
             </Link>
             <p>STREET TO ELITE</p>
           </div>
-          <div className="footer-links">
-            <Link href="/privacy">PRIVACY POLICY</Link>
-            <Link href="/terms">TERMS OF USE</Link>
-            <Link href="/contact">CONTACT</Link>
-          </div>
+
         </div>
         <div className="copyright">
           &copy; {new Date().getFullYear()} 3x3 BASKETBALL ASSOCIATION. ALL RIGHTS RESERVED.
@@ -51,21 +47,7 @@ export default function Footer() {
           letter-spacing: 2px;
         }
 
-        .footer-links {
-          display: flex;
-          gap: 2rem;
-        }
 
-        .footer-links :global(a) {
-          font-size: 0.8rem;
-          color: var(--text-muted);
-          font-weight: bold;
-          transition: color 0.3s ease;
-        }
-
-        .footer-links :global(a):hover {
-          color: var(--accent-color);
-        }
 
         .copyright {
           text-align: center;
@@ -82,10 +64,7 @@ export default function Footer() {
             text-align: center;
           }
           
-          .footer-links {
-            flex-direction: column;
-            gap: 1rem;
-          }
+
         }
       `}</style>
     </footer>

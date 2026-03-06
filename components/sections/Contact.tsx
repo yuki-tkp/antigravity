@@ -1,8 +1,53 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
+import { submitContact } from '@/app/actions/contact';
 
 export default function Contact() {
+    const [step, setStep] = useState<'form' | 'confirm' | 'complete'>('form');
+    const [isSending, setIsSending] = useState(false);
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleToConfirm = (e: React.FormEvent) => {
+        e.preventDefault();
+        setStep('confirm');
+    };
+
+    const handleBackToForm = () => {
+        setStep('form');
+    };
+
+    const handleSendMessage = async () => {
+        setIsSending(true);
+        try {
+            const result = await submitContact(formData);
+            if (result.success) {
+                setStep('complete');
+            } else {
+                alert('送信に失敗しました。時間をおいて再度お試しいただくか、Instagram等からご連絡ください。');
+            }
+        } catch (error) {
+            console.error('Error sending message:', error);
+            alert('予期せぬエラーが発生しました。');
+        } finally {
+            setIsSending(false);
+        }
+    };
+
+    const handleReset = () => {
+        setFormData({ name: '', email: '', message: '' });
+        setStep('form');
+    };
+
     return (
         <section id="contact" className="section contact">
             <div className="container">
@@ -20,21 +65,98 @@ export default function Contact() {
                             <a href="https://instagram.com/K3a_2024" target="_blank" rel="noopener noreferrer" className="value">@K3a_2024</a>
                         </div>
                     </div>
-                    <form className="contact-form">
-                        <div className="form-group">
-                            <label htmlFor="name">NAME</label>
-                            <input type="text" id="name" name="name" placeholder="お名前" required />
+
+                    {step === 'form' && (
+                        <form className="contact-form" onSubmit={handleToConfirm}>
+                            <div className="form-group">
+                                <label htmlFor="name">NAME</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="お名前"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="email">E-MAIL</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="メールアドレス"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="message">MESSAGE</label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows={5}
+                                    placeholder="お問い合わせ内容"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    required
+                                ></textarea>
+                            </div>
+                            <button type="submit" className="btn btn-primary full-width">CONFIRM CONTENT</button>
+                        </form>
+                    )}
+
+                    {step === 'confirm' && (
+                        <div className="contact-form confirm-view">
+                            <div className="confirm-header">
+                                <h3>確認画面</h3>
+                                <p>以下の内容でよろしければ「SEND MESSAGE」ボタンを押してください。</p>
+                            </div>
+
+                            <div className="confirm-content">
+                                <div className="confirm-item">
+                                    <span className="confirm-label">NAME</span>
+                                    <p className="confirm-value">{formData.name}</p>
+                                </div>
+                                <div className="confirm-item">
+                                    <span className="confirm-label">E-MAIL</span>
+                                    <p className="confirm-value">{formData.email}</p>
+                                </div>
+                                <div className="confirm-item">
+                                    <span className="confirm-label">MESSAGE</span>
+                                    <p className="confirm-value pre-wrap">{formData.message}</p>
+                                </div>
+                            </div>
+
+                            <div className="confirm-actions">
+                                <button
+                                    onClick={handleBackToForm}
+                                    className="btn btn-outline full-width mb-1"
+                                    disabled={isSending}
+                                >
+                                    BACK
+                                </button>
+                                <button
+                                    onClick={handleSendMessage}
+                                    className="btn btn-primary full-width"
+                                    disabled={isSending}
+                                >
+                                    {isSending ? 'SENDING...' : 'SEND MESSAGE'}
+                                </button>
+                            </div>
                         </div>
-                        <div className="form-group">
-                            <label htmlFor="email">E-MAIL</label>
-                            <input type="email" id="email" name="email" placeholder="メールアドレス" required />
+                    )}
+
+                    {step === 'complete' && (
+                        <div className="contact-form complete-view text-center">
+                            <div className="success-icon">✓</div>
+                            <h3>THANK YOU!</h3>
+                            <p>お問い合わせを承りました。内容を確認後、担当者よりご連絡いたします。</p>
+                            <button onClick={handleReset} className="btn btn-primary mt-2">BACK TO HOME</button>
                         </div>
-                        <div className="form-group">
-                            <label htmlFor="message">MESSAGE</label>
-                            <textarea id="message" name="message" rows={5} placeholder="お問い合わせ内容" required></textarea>
-                        </div>
-                        <button type="submit" className="btn btn-primary full-width">SEND MESSAGE</button>
-                    </form>
+                    )}
                 </div>
             </div>
 
@@ -92,6 +214,95 @@ export default function Contact() {
                     box-shadow: var(--glass-shadow);
                     backdrop-filter: blur(10px);
                 }
+
+                .confirm-header {
+                    margin-bottom: 2rem;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                    padding-bottom: 1rem;
+                }
+
+                .confirm-header h3 {
+                    font-size: 1.5rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                .confirm-header p {
+                    font-size: 0.9rem;
+                    color: var(--text-muted);
+                }
+
+                .confirm-item {
+                    margin-bottom: 1.5rem;
+                }
+
+                .confirm-label {
+                    display: block;
+                    font-family: var(--font-heading);
+                    font-size: 0.7rem;
+                    color: var(--accent-color);
+                    letter-spacing: 1px;
+                    margin-bottom: 0.5rem;
+                }
+
+                .confirm-value {
+                    color: white;
+                    font-size: 1.1rem;
+                    background: rgba(255, 255, 255, 0.03);
+                    padding: 0.8rem;
+                    border-left: 2px solid var(--accent-color);
+                }
+
+                .pre-wrap {
+                    white-space: pre-wrap;
+                }
+
+                .confirm-actions {
+                    margin-top: 2rem;
+                    display: grid;
+                    gap: 1rem;
+                }
+
+                .btn-outline {
+                    background: transparent;
+                    border: 1px solid var(--accent-color);
+                    color: var(--accent-color);
+                }
+
+                .btn-outline:hover {
+                    background: var(--accent-color);
+                    color: white;
+                }
+
+                .complete-view {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 400px;
+                }
+
+                .success-icon {
+                    width: 80px;
+                    height: 80px;
+                    background: var(--accent-color);
+                    color: white;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 2.5rem;
+                    margin-bottom: 2rem;
+                    animation: scaleIn 0.5s ease;
+                }
+
+                @keyframes scaleIn {
+                    0% { transform: scale(0); opacity: 0; }
+                    100% { transform: scale(1); opacity: 1; }
+                }
+
+                .text-center { text-align: center; }
+                .mt-2 { margin-top: 2rem; }
+                .mb-1 { margin-bottom: 1rem; }
 
                 .form-group {
                     margin-bottom: 1.5rem;

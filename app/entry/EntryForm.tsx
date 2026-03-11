@@ -81,8 +81,8 @@ export default function EntryForm() {
     if (isSuccess) {
         return (
             <div className={styles.successMessage}>
-                <h2 style={{ color: '#000' }}>エントリーを受け付けました</h2>
-                <p style={{ color: '#000' }}>確認メールをお送りしましたのでご確認ください。</p>
+                <h2 style={{ color: '#000' }}>ENTRY完了</h2>
+                <p style={{ color: '#000' }}>後日、主催者から確認のご連絡をさせていただきます。</p>
                 <button className="btn btn-primary" onClick={() => window.location.reload()}>続けてエントリーする</button>
             </div>
         );

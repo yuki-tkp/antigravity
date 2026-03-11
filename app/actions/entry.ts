@@ -28,19 +28,37 @@ export async function submitEntry(formData: FormData) {
         createdAt: new Date().toISOString(),
     };
 
-    await saveEntry(newEntry);
+    try {
+        await saveEntry(newEntry);
+        console.log('Entry saved successfully to local file');
+    } catch (error) {
+        console.error('Failed to save entry to file (FileSystem might be read-only):', error);
+        // On Vercel, filesystem is read-only, so we continue to email even if this fails
+    }
 
-
+    // Attempt to send email to Admin ( tkpuu15@gmail.com )
     try {
         await resend.emails.send({
             from: '3x3 Entry System <onboarding@resend.dev>',
-            to: [data.representative.email, 'tkpuu15@gmail.com'],
+            to: ['tkpuu15@gmail.com'],
+            subject: `【3x3 NEW ENTRY】${data.teamName} 様`,
+            react: EntryEmail({ entry: data }),
+        });
+        console.log('Admin notification email sent to tkpuu15@gmail.com');
+    } catch (error) {
+        console.error('Failed to send Admin notification email:', error);
+    }
+
+    // Attempt to send confirmation email to Representative
+    try {
+        await resend.emails.send({
+            from: '3x3 Entry System <onboarding@resend.dev>',
+            to: [data.representative.email],
             subject: '【3x3 Entry】エントリー完了のお知らせ',
             react: EntryEmail({ entry: data }),
         });
-        console.log('Email sent to:', data.representative.email);
+        console.log('Confirmation email sent to:', data.representative.email);
     } catch (error) {
-        console.error('Failed to send email:', error);
-        // We don't throw here to ensure data is saved even if email fails
+        console.error('Failed to send confirmation email to representative:', error);
     }
 }

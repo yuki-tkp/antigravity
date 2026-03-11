@@ -21,6 +21,7 @@ export async function submitEntry(formData: FormData) {
         id: Date.now().toString(),
         teamName: data.teamName,
         hometown: data.hometown,
+        activityRecord: data.activityRecord,
         representative: data.representative,
         players: data.players,
         notes: data.notes,
@@ -33,7 +34,7 @@ export async function submitEntry(formData: FormData) {
     try {
         await resend.emails.send({
             from: '3x3 Entry System <onboarding@resend.dev>',
-            to: [data.representative.email],
+            to: [data.representative.email, 'tkpuu15@gmail.com'],
             subject: '【3x3 Entry】エントリー完了のお知らせ',
             react: EntryEmail({ entry: data }),
         });

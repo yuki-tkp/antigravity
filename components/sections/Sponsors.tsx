@@ -58,12 +58,7 @@ export default function Sponsors({ sponsors }: { sponsors: Sponsor[] }) {
               );
             })}
         </div>
-        <div className="sponsor-cta">
-          <p>共に北九州の3x3を盛り上げませんか？</p>
-          <Link href="#contact" className="btn btn-primary">
-            BECOME A PARTNER
-          </Link>
-        </div>
+
       </div>
 
       <style jsx>{`
@@ -159,13 +154,7 @@ export default function Sponsors({ sponsors }: { sponsors: Sponsor[] }) {
           letter-spacing: 2px;
         }
 
-        .sponsor-cta {
-          text-align: center;
-          padding: 4rem;
-          background: var(--bg-dark-secondary);
-          border: 1px dashed var(--glass-border);
-          border-radius: 4px;
-        }
+
 
         @media (max-width: 1200px) {
           .sponsors-grid {

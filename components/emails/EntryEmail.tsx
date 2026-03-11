@@ -32,7 +32,8 @@ export const EntryEmail = ({ entry }: EntryEmailProps) => {
                         <Heading as="h2" style={h2}>チーム情報</Heading>
                         <Text style={text}>
                             <strong>チーム名:</strong> {entry.teamName}<br />
-                            <strong>活動拠点:</strong> {entry.hometown || '未記入'}
+                            <strong>活動拠点:</strong> {entry.hometown || '未記入'}<br />
+                            <strong>活動実績:</strong> {entry.activityRecord || '未記入'}
                         </Text>
                     </Section>
 

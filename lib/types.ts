@@ -27,6 +27,7 @@ export type Entry = {
     id: string;
     teamName: string;
     hometown?: string;
+    activityRecord?: string;
     representative: {
         name: string;
         email: string;

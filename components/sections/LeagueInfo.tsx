@@ -6,14 +6,14 @@ export default function LeagueInfo() {
   const leagues = [
     {
       season: 'SEASON 2026',
-      title: 'BISCO BALL',
-      date: '2026.02.28 (SAT)',
-      place: 'KITAKYUSHU CITY',
-      fee: '¥10,000 / TEAM',
-      prize: '¥20,000',
-      buttonText: 'ENTRY',
-      link: '/entry',
-      visible: false,
+      title: 'Bisco Ball U-15',
+      date: '2026.04.25',
+      place: '船場広場（小倉北区）',
+      fee: '-',
+      prize: '-',
+      buttonText: 'VIEW DETAILS',
+      link: '/tournament/bisco-ball-u15',
+      visible: true,
     },
     {
       season: 'SEASON 2026',
@@ -54,14 +54,18 @@ export default function LeagueInfo() {
                     <div className="info-value">{league.place}</div>
                   </div>
                   <div className="info-meta">
-                    <div className="meta-item">
-                      <span className="label">FEE</span>
-                      <span className="value">{league.fee}</span>
-                    </div>
-                    <div className="meta-item">
-                      <span className="label">PRIZE</span>
-                      <span className="value">{league.prize}</span>
-                    </div>
+                    {league.buttonText !== 'VIEW DETAILS' && (
+                      <>
+                        <div className="meta-item">
+                          <span className="label">FEE</span>
+                          <span className="value">{league.fee}</span>
+                        </div>
+                        <div className="meta-item">
+                          <span className="label">PRIZE</span>
+                          <span className="value">{league.prize}</span>
+                        </div>
+                      </>
+                    )}
                   </div>
                   <Link href={league.link} className="btn btn-primary full-width">
                     {league.buttonText}

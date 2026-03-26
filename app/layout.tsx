@@ -24,13 +24,17 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://antigravity-three-tan.vercel.app"),
   title: "北九州 3on3 協会 | Kitakyushu 3on3 Association",
   description: "北九州 3on3 協会のオフィシャルWebサイト。3x3バスケットボールの普及と大会参加促進を目的とした情報発信サイトです。",
   keywords: ["北九州バスケ", "北九州3on3協会", "北九州3on3", "バスケットボール", "3x3", "福岡", "小倉", "ストリートボール", "大会", "エントリー"],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "北九州 3on3 協会 | Kitakyushu 3on3 Association",
     description: "北九州 3on3 協会のオフィシャルWebサイト。3x3バスケットボールの普及と大会参加促進を目的とした情報発信サイトです。",
-    url: "https://kitakyushu-3on3.com", // Assume an appropriate domain or placeholder
+    url: "https://antigravity-three-tan.vercel.app",
     siteName: "北九州 3on3 協会",
     locale: "ja_JP",
     type: "website",
@@ -47,8 +51,33 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SportsOrganization",
+    "name": "北九州 3on3 協会",
+    "alternateName": "Kitakyushu 3on3 Association",
+    "url": "https://antigravity-three-tan.vercel.app",
+    "logo": "https://antigravity-three-tan.vercel.app/images/k3a-logo.png",
+    "description": "北九州 3on3 協会のオフィシャルWebサイト。3x3バスケットボールの普及と大会参加促進を目的とした情報発信サイトです。",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "北九州市",
+      "addressRegion": "福岡県",
+      "addressCountry": "JP"
+    },
+    "sameAs": [
+      "https://www.instagram.com/k3a__2024/"
+    ]
+  };
+
   return (
     <html lang="ja">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${anton.variable} ${noto.variable} ${roboto.variable}`} style={{ minHeight: '100vh' }}>
         {children}
       </body>

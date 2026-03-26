@@ -31,6 +31,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    google: "google6ab564a4d19747e2",
+  },
   openGraph: {
     title: "北九州 3on3 協会 | Kitakyushu 3on3 Association",
     description: "北九州 3on3 協会のオフィシャルWebサイト。3x3バスケットボールの普及と大会参加促進を目的とした情報発信サイトです。",

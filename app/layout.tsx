@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   verification: {
-    google: "google6ab564a4d19747e2",
+    google: ["google6ab564a4d19747e2", "IyyddWySWdaYOEzhfGPv6I7_9u_v0zN9vT6u5p4m5k"],
   },
   openGraph: {
     title: "北九州 3on3 協会 | Kitakyushu 3on3 Association",
@@ -77,6 +77,7 @@ export default function RootLayout({
     <html lang="ja">
       <head>
         <meta name="google-site-verification" content="google6ab564a4d19747e2" />
+        <meta name="google-site-verification" content="IyyddWySWdaYOEzhfGPv6I7_9u_v0zN9vT6u5p4m5k" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

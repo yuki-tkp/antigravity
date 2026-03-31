@@ -13,7 +13,7 @@ export default function LeagueInfo() {
       prize: '-',
       buttonText: 'VIEW DETAILS',
       link: '/tournament/bisco-ball-u15',
-      visible: true,
+      visible: false,
     },
     {
       season: 'SEASON 2026',
@@ -24,7 +24,7 @@ export default function LeagueInfo() {
       prize: '-',
       buttonText: 'COMING SOON',
       link: '#',
-      visible: false,
+      visible: true,
     },
   ];
 

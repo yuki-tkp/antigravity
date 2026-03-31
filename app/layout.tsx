@@ -26,8 +26,8 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   metadataBase: new URL("https://antigravity-three-tan.vercel.app"),
   title: "北九州 3on3 協会 | Kitakyushu 3on3 Association",
-  description: "北九州 3on3 協会のオフィシャルWebサイト。3x3（スリー・エックス・スリー）や3on3、バスケットボール、アーバンスポーツ（都市型スポーツ）の普及と大会情報を発信。北九州・福岡のバスケットボール協会として活動しています。",
-  keywords: ["3x3", "3on3", "北九州バスケ", "福岡バスケ", "バスケットボール", "バスケ協会", "アーバンスポーツ", "都市型スポーツ", "ストリートボール", "大会", "エントリー"],
+  description: "北九州 3on3 協会のオフィシャルWebサイト。3x3（スリー・エックス・スリー）や3on3、バスケ（バスケットボール）、アーバンスポーツ（都市型スポーツ）の普及と大会情報を発信。北九州・福岡のバスケットボール協会として活動しています。",
+  keywords: ["3x3", "3on3", "3X3", "バスケ", "バスケット", "バスケットボール", "北九州バスケ", "福岡バスケ", "スリーバイスリー", "ストリートバスケ", "ストバス", "アーバンスポーツ", "都市型スポーツ", "バスケ大会", "北九州 3x3", "福岡 3x3", "K3A", "エントリー"],
   alternates: {
     canonical: "/",
   },
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "北九州 3on3 協会 | Kitakyushu 3on3 Association",
-    description: "北九州 3on3 協会のオフィシャルWebサイト。3x3や3on3、アーバンスポーツの普及と大会情報を発信しています。",
+    description: "北九州 3on3 協会のオフィシャルWebサイト。3x3や3on3、バスケ、アーバンスポーツの普及と大会情報を発信しています。",
     url: "https://antigravity-three-tan.vercel.app",
     siteName: "北九州 3on3 協会",
     locale: "ja_JP",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "北九州 3on3 協会 | Kitakyushu 3on3 Association",
-    description: "北九州 3on3 協会のオフィシャルWebサイト。3x3や3on3、アーバンスポーツの普及と大会情報を発信。",
+    description: "北九州 3on3 協会のオフィシャルWebサイト。3x3や3on3、バスケ、アーバンスポーツの普及と大会情報を発信。",
   },
 };
 
@@ -61,7 +61,7 @@ export default function RootLayout({
     "alternateName": "Kitakyushu 3on3 Association",
     "url": "https://antigravity-three-tan.vercel.app",
     "logo": "https://antigravity-three-tan.vercel.app/images/k3a-logo.png",
-    "description": "北九州 3on3 協会のオフィシャルWebサイト。3x3バスケットボールの普及と大会参加促進を目的とした情報発信サイトです。",
+    "description": "北九州 3on3 協会のオフィシャルWebサイト。3x3やバスケ（3on3）の普及と大会参加促進を目的とした情報発信サイトです。",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "北九州市",

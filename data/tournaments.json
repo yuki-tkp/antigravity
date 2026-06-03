@@ -16,5 +16,14 @@
         "status": "open",
         "description": "Competition & Exhibition. 10:30-19:00.",
         "imageUrl": "/assets/flyer2.jpg"
+    },
+    {
+        "id": "bisco-ball-u18",
+        "title": "bisco ball Under18",
+        "date": "2026-08-09",
+        "location": "JR小倉駅 3階改札前 JAM広場",
+        "status": "open",
+        "description": "北九州の若者よ。ここから街を創れ。U-18カテゴリ対象の3x3トーナメントを開催。入場・観戦無料。",
+        "imageUrl": "/images/special/bisco-ball-u18.png"
     }
 ]

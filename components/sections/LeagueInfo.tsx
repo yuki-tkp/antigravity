@@ -17,14 +17,15 @@ export default function LeagueInfo() {
     },
     {
       season: 'SEASON 2026',
-      title: 'OPEN LEAGUE',
-      date: 'COMING SOON',
-      place: 'TBD',
-      fee: '-',
+      title: 'bisco ball Under18',
+      date: '2026.08.09(SUN)',
+      place: 'JR小倉駅 3階改札前 JAM広場',
+      fee: '観戦無料',
       prize: '-',
-      buttonText: 'COMING SOON',
-      link: '#',
+      buttonText: 'VIEW DETAILS',
+      link: '/tournament/bisco-ball-u18',
       visible: true,
+      imageUrl: '/images/special/bisco-ball-u18.png',
     },
   ];
 
@@ -40,32 +41,33 @@ export default function LeagueInfo() {
           {visibleLeagues.length > 0 ? (
             visibleLeagues.map((league, index) => (
               <div key={index} className="league-card">
+                {league.imageUrl && (
+                  <div className="card-image">
+                    <img src={league.imageUrl} alt={league.title} />
+                  </div>
+                )}
                 <div className="card-header">
                   <span className="season">{league.season}</span>
                   <h3>{league.title}</h3>
                 </div>
                 <div className="card-body">
-                  <div className="info-item">
-                    <div className="info-label">SCHEDULE</div>
-                    <div className="info-value">{league.date}</div>
-                  </div>
-                  <div className="info-item">
-                    <div className="info-label">LOCATION</div>
-                    <div className="info-value">{league.place}</div>
-                  </div>
-                  <div className="info-meta">
-                    {league.buttonText !== 'VIEW DETAILS' && (
-                      <>
-                        <div className="meta-item">
-                          <span className="label">FEE</span>
-                          <span className="value">{league.fee}</span>
-                        </div>
-                        <div className="meta-item">
-                          <span className="label">PRIZE</span>
-                          <span className="value">{league.prize}</span>
-                        </div>
-                      </>
-                    )}
+                  <div className="info-grid">
+                    <div className="info-item">
+                      <div className="info-label">SCHEDULE</div>
+                      <div className="info-value">{league.date}</div>
+                    </div>
+                    <div className="info-item">
+                      <div className="info-label">LOCATION</div>
+                      <div className="info-value">{league.place}</div>
+                    </div>
+                    <div className="info-item">
+                      <div className="info-label">FEE</div>
+                      <div className="info-value">{league.fee}</div>
+                    </div>
+                    <div className="info-item">
+                      <div className="info-label">PRIZE</div>
+                      <div className="info-value">{league.prize}</div>
+                    </div>
                   </div>
                   <Link href={league.link} className="btn btn-primary full-width">
                     {league.buttonText}
@@ -109,6 +111,30 @@ export default function LeagueInfo() {
           border-color: var(--accent-color);
         }
 
+        .card-image {
+          width: 100%;
+          background: #0a0a0a;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-bottom: 1px solid var(--glass-border);
+          padding: 2.5rem 1rem;
+        }
+
+        .card-image img {
+          max-width: 100%;
+          max-height: 380px;
+          width: auto;
+          height: auto;
+          object-fit: contain;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+          transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .league-card:hover .card-image img {
+          transform: scale(1.05);
+        }
+
         .card-header {
           background: #000;
           padding: 3rem 2rem;
@@ -138,8 +164,15 @@ export default function LeagueInfo() {
           padding: 3rem;
         }
 
+        .info-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
+          margin-bottom: 3rem;
+        }
+
         .info-item {
-          margin-bottom: 2rem;
+          margin-bottom: 0;
         }
 
         .info-label {
@@ -154,35 +187,6 @@ export default function LeagueInfo() {
           font-size: 1.4rem;
           font-weight: 700;
           color: white;
-        }
-
-        .info-meta {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 2rem;
-          margin: 2rem 0 3rem;
-          padding: 2rem 0;
-          border-top: 1px dashed var(--glass-border);
-          border-bottom: 1px dashed var(--glass-border);
-        }
-
-        .meta-item {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .meta-item .label {
-          font-family: var(--font-heading);
-          font-size: 0.7rem;
-          color: var(--text-muted);
-          letter-spacing: 2px;
-          margin-bottom: 0.5rem;
-        }
-
-        .meta-item .value {
-          font-size: 1.2rem;
-          font-weight: 800;
-          color: var(--accent-color);
         }
 
         .more-info {

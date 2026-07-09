@@ -1,15 +1,9 @@
 [
     {
-        "id": "12",
-        "name": "株式会社田園興産",
-        "logoUrl": "/images/sponsors/tazono.png",
-        "url": "https://r-corp.co.jp/tazono-hp/"
-    },
-    {
-        "id": "13",
-        "name": "有限会社藤原不動産",
-        "logoUrl": "/images/sponsors/fujiwara-fudosan.png",
-        "url": "https://www.fujiwara-f.co.jp/"
+        "id": "17",
+        "name": "11TAP",
+        "logoUrl": "/images/sponsors/11tap.png",
+        "url": "https://11tap-beer.com/"
     },
     {
         "id": "3",
@@ -24,6 +18,54 @@
         "url": "https://www.mapion.co.jp/phonebook/M12002/40106/24030628899/"
     },
     {
+        "id": "22",
+        "name": "名鉄観光",
+        "logoUrl": "/images/sponsors/meitetsu.png",
+        "url": "https://www.mwt.co.jp/"
+    },
+    {
+        "id": "6",
+        "name": "三島光産",
+        "logoUrl": "/images/sponsors/mishima-kosan.png",
+        "url": "https://www.mishimakosan.com/"
+    },
+    {
+        "id": "23",
+        "name": "九州機電株式会社",
+        "logoUrl": "/images/sponsors/kyushu-kiden.png",
+        "url": "https://www.kyushu-kiden.co.jp/"
+    },
+    {
+        "id": "19",
+        "name": "ウチヤマホールディングス",
+        "logoUrl": "/images/sponsors/uchiyama-holdings.png",
+        "url": "https://www.uchiyama-gr.jp/"
+    },
+    {
+        "id": "20",
+        "name": "昭電テックス",
+        "logoUrl": "/images/sponsors/shoden-tecx.png",
+        "url": "http://www.shoden-tecx.co.jp/"
+    },
+    {
+        "id": "4",
+        "name": "ミクニ",
+        "logoUrl": "/images/sponsors/mikuni.png",
+        "url": "https://mknw.co.jp/"
+    },
+    {
+        "id": "12",
+        "name": "株式会社田園興産",
+        "logoUrl": "/images/sponsors/tazono.png",
+        "url": "https://r-corp.co.jp/tazono-hp/"
+    },
+    {
+        "id": "13",
+        "name": "有限会社藤原不動産",
+        "logoUrl": "/images/sponsors/fujiwara-fudosan.png",
+        "url": "https://www.fujiwara-f.co.jp/"
+    },
+    {
         "id": "9",
         "name": "至誠法律事務所",
         "logoUrl": "/images/sponsors/shisei-law.png",
@@ -34,18 +76,6 @@
         "name": "株式会社新大倉",
         "logoUrl": "/images/sponsors/shin-ohkura.png",
         "url": "https://www.shinohkura.co.jp/"
-    },
-    {
-        "id": "6",
-        "name": "三島光産",
-        "logoUrl": "/images/sponsors/mishima-kosan.png",
-        "url": "https://www.mishimakosan.com/"
-    },
-    {
-        "id": "4",
-        "name": "ミクニ",
-        "logoUrl": "/images/sponsors/mikuni.png",
-        "url": "https://mknw.co.jp/"
     },
     {
         "id": "14",
@@ -84,34 +114,16 @@
         "url": ""
     },
     {
-        "id": "17",
-        "name": "11TAP",
-        "logoUrl": "/images/sponsors/11tap.png",
-        "url": "https://11tap-beer.com/"
-    },
-    {
         "id": "21",
         "name": "株式会社エルザ",
         "logoUrl": "/images/sponsors/eruza.png",
         "url": "http://www.eruza.co.jp/"
     },
     {
-        "id": "19",
-        "name": "ウチヤマホールディングス",
-        "logoUrl": "/images/sponsors/uchiyama-holdings.png",
-        "url": "https://www.uchiyama-gr.jp/"
-    },
-    {
         "id": "18",
         "name": "アンサー倶楽部",
         "logoUrl": "/images/sponsors/answer-club.png",
         "url": "https://answerclub.co.jp/"
-    },
-    {
-        "id": "20",
-        "name": "昭電テックス",
-        "logoUrl": "/images/sponsors/shoden-tecx.png",
-        "url": "http://www.shoden-tecx.co.jp/"
     },
     {
         "id": "5",

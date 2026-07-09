@@ -33,12 +33,12 @@ export default function Navbar() {
         </Link>
 
         <ul className={`nav-links ${isOpen ? 'nav-active' : ''}`}>
-          <li><Link href="#about" onClick={() => setIsOpen(false)}>ABOUT</Link></li>
-          <li><Link href="#league" onClick={() => setIsOpen(false)}>LEAGUE</Link></li>
+          <li><Link href="/#about" onClick={() => setIsOpen(false)}>ABOUT</Link></li>
+          <li><Link href="/#league" onClick={() => setIsOpen(false)}>LEAGUE</Link></li>
           <li><Link href="/entry" onClick={() => setIsOpen(false)}>ENTRY</Link></li>
-          <li><Link href="#reports" onClick={() => setIsOpen(false)}>REPORTS</Link></li>
-          <li><Link href="#sponsors" onClick={() => setIsOpen(false)}>SPONSORS</Link></li>
-          <li><Link href="#contact" onClick={() => setIsOpen(false)}>CONTACT</Link></li>
+          <li><Link href="/#reports" onClick={() => setIsOpen(false)}>REPORTS</Link></li>
+          <li><Link href="/#sponsors" onClick={() => setIsOpen(false)}>SPONSORS</Link></li>
+          <li><Link href="/#contact" onClick={() => setIsOpen(false)}>CONTACT</Link></li>
         </ul>
 
         <div className={`burger ${isOpen ? 'toggle' : ''}`} onClick={toggleMenu}>

@@ -39,6 +39,7 @@ export default function Hero() {
       <div className="hero-overlay"></div>
 
       <div className="hero-content container">
+        <h1 className="sr-only">北九州 3on3 協会 - 北九州バスケ・3on3・アーバンスポーツイベント</h1>
         <div className="logo-wrapper">
           <Image
             src="/images/k3a-logo.png"

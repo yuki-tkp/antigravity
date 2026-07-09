@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Anton, Noto_Sans_JP, Roboto } from "next/font/google";
 import "./globals.css";
 
@@ -25,9 +25,9 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://antigravity-three-tan.vercel.app"),
-  title: "北九州 3on3 協会 | Kitakyushu 3on3 Association",
-  description: "北九州 3on3 協会のオフィシャルWebサイト。3x3（スリー・エックス・スリー）や3on3、バスケ（バスケットボール）、アーバンスポーツ（都市型スポーツ）の普及と大会情報を発信。北九州・福岡のバスケットボール協会として活動しています。",
-  keywords: ["3x3", "3on3", "3X3", "バスケ", "バスケット", "バスケットボール", "北九州バスケ", "福岡バスケ", "スリーバイスリー", "ストリートバスケ", "ストバス", "アーバンスポーツ", "都市型スポーツ", "バスケ大会", "北九州 3x3", "福岡 3x3", "K3A", "エントリー"],
+  title: "北九州 3on3 協会 | バスケ・3on3スポーツイベント",
+  description: "北九州でバスケ（バスケットボール）や3on3、アーバンスポーツのイベント・大会情報を発信する北九州 3on3 協会のオフィシャルサイト。どなたでも参加できるスポーツイベントを通じて、北九州のバスケシーンを盛り上げます。",
+  keywords: ["北九州バスケ", "北九州 3on3", "北九州 イベント", "バスケ イベント", "3x3", "3X3", "バスケ", "バスケット", "バスケットボール", "福岡バスケ", "スリーバイスリー", "ストリートバスケ", "アーバンスポーツ", "スポーツイベント", "バスケ大会", "K3A"],
   alternates: {
     canonical: "/",
   },
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
     google: "lyyddWySWdaYOEZH2JHUxjjXg94Cn-k3t0BBYzR6JD8",
   },
   openGraph: {
-    title: "北九州 3on3 協会 | Kitakyushu 3on3 Association",
-    description: "北九州 3on3 協会のオフィシャルWebサイト。3x3や3on3、バスケ、アーバンスポーツの普及と大会情報を発信しています。",
+    title: "北九州 3on3 協会 | バスケ・3on3スポーツイベント",
+    description: "北九州でバスケ（バスケットボール）や3on3、アーバンスポーツのイベント・大会情報を発信する北九州 3on3 協会のオフィシャルサイト。",
     url: "https://antigravity-three-tan.vercel.app",
     siteName: "北九州 3on3 協会",
     locale: "ja_JP",
@@ -44,9 +44,15 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "北九州 3on3 協会 | Kitakyushu 3on3 Association",
-    description: "北九州 3on3 協会のオフィシャルWebサイト。3x3や3on3、バスケ、アーバンスポーツの普及と大会情報を発信。",
+    title: "北九州 3on3 協会 | バスケ・3on3スポーツイベント",
+    description: "北九州でバスケや3on3、アーバンスポーツのイベント・大会に参加しよう！",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({

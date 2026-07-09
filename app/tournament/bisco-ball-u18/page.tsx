@@ -22,7 +22,7 @@ export default function BiscoBallU18() {
                         <div className="content-inner">
                             <div className="media-container">
                                 <img 
-                                    src="/images/special/bisco-ball-u18.png" 
+                                    src="/images/special/bisco-ball-u18-2.png" 
                                     alt="bisco ball Under18 Poster" 
                                     className="poster-image" 
                                 />

@@ -25,7 +25,7 @@ export default function LeagueInfo() {
       buttonText: 'VIEW DETAILS',
       link: '/tournament/bisco-ball-u18',
       visible: true,
-      imageUrl: '/images/special/bisco-ball-u18.png',
+      imageUrl: '/images/special/bisco-ball-u18-2.png',
     },
   ];
 

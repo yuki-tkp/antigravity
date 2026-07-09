@@ -6,9 +6,13 @@ import Link from 'next/link';
 
 export default function Hero() {
   const images = [
-    '/images/hero/hero-1.jpg',
-    '/images/hero/hero-2.jpg',
-    '/images/hero/hero-3.jpg',
+    '/images/hero/IMG_0876.JPG',
+    '/images/hero/IMG_0969.JPG',
+    '/images/hero/IMG_1036.JPG',
+    '/images/hero/IMG_1204.JPG',
+    '/images/hero/IMG_1265.JPG',
+    '/images/hero/IMG_6670.JPG',
+    '/images/hero/IMG_8302.jpg',
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
